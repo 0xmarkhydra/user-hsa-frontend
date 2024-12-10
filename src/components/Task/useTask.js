@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import blogService from "@/services/block.service";
 
 const useTask = () => {
     const [todos, setTodos] = useState([]);
@@ -16,6 +17,12 @@ const useTask = () => {
             todo.id === id ? { ...todo, completed: !todo.completed } : todo
         ));
     };
+
+    React.useEffect(() => {
+        blogService.getListBlogs().then((res) => {
+            console.log('getListBlogs', res);
+        });
+    }, []);
 
     return {
         todos,

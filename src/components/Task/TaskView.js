@@ -15,12 +15,6 @@ function TaskView(props) {
         setNewTodo('');
     };
 
-    React.useEffect(() => {
-        blogService.getListBlogs().then((res) => {
-            console.log('getListBlogs', res);
-        });
-    }, []);
-
     return (
         <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
             <h1 className="text-2xl font-bold mb-4">Todo List</h1>
