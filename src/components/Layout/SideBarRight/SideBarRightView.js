@@ -2,7 +2,7 @@ import React from "react";
 
 const SideBarRight = () => {
   return (
-    <div class="max-w-xs mx-auto p-4 ">
+    <div class="max-w-xs mx-auto p-4 overflow-y-scroll">
       <h1 class="text-[#2E7D32] text-2xl font-medium mb-4">BXH test</h1>
       <div class="flex items-center mb-4">
         <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-xl">
