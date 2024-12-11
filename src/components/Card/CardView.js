@@ -21,7 +21,7 @@ const CardView = ({ type }) => {
             key={card.id}
             className="basis-full xs:basis-1/2 sm:basis-1/3 md:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0"
           >
-            <div className="w-full aspect-square relative bg-slate-500 overflow-hidden relative">
+            <div className="w-full aspect-square relative bg-slate-500 overflow-hidden">
               <Image layout="fill" alt="card img" src={card.image} />
               {type === CARD_TYPE.BOOK && (
                 <span className="absolute right-1 top-1 w-12 font-semibold bg-red-600 text-[12px] rounded-full text-white text-center p-1">
