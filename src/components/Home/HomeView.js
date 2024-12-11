@@ -6,6 +6,7 @@ import SearchSugestion from "./SearchSuggestion/SearchSugestionView";
 import TeacherSuggestionView from "./TeacherSuggestion/TeacherSuggestionView";
 import CardView from "../Card/CardView";
 import { CARD_TYPE } from "../Card/useCard";
+import MenuTabView from "./Layout/MenuTab/MenuTabView";
 
 export default function HomeView() {
   return (
@@ -35,6 +36,8 @@ export default function HomeView() {
       </div>
 
       <FooterView />
+
+      <MenuTabView />
     </div>
   );
 }
