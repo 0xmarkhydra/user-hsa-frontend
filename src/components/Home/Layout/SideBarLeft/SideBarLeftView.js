@@ -2,7 +2,7 @@ import React from "react";
 
 const SideBarLeftView = () => {
   return (
-    <div class="max-w-xs mx-auto p-6 overflow-y-scroll">
+    <div class="max-w-xs min-w-[250px] mx-auto p-6 overflow-y-scroll">
       <div class="space-y-4">
         <a class="flex items-center text-green-700 " href="#">
           <i class="far fa-user text-xl w-8"></i>
