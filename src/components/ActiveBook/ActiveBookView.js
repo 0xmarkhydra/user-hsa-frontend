@@ -1,8 +1,4 @@
-import CardView from "../Card/CardView";
-import { CARD_TYPE } from "../Card/useCard";
 import HeaderView from "../Layout/Header/HeaderView";
-import SideBarLeftView from "../Layout/SideBarLeft/SideBarLeftView";
-import SideBarRight from "../Layout/SideBarRight/SideBarRightView";
 import FooterView from "../Layout/Footer/FooterView";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import BookCardView from "./BookCard.js/BookCardView";

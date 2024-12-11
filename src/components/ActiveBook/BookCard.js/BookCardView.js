@@ -2,17 +2,20 @@ import Image from "next/image";
 import React from "react";
 import useBookCard from "./useBookCard";
 import BookCardFooterView from "./BookCardFooterView";
+import useRedirect from "@/components/Home/useRedirect";
 
 const BookCardView = () => {
-  const { cardList, currentPage, totalPages, goToPage } =
-    useBookCard();
+  const { cardList, currentPage, totalPages, goToPage } = useBookCard();
+
+  const { redirect } = useRedirect();
   return (
     <>
       <div className="flex w-full flex-wrap">
         {cardList.map((card) => (
           <div
             key={card.id}
-            className="basis-full xs:basis-1/2 lg:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0 bg-white scale-95"
+            className="basis-full xs:basis-1/2 lg:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0 bg-white scale-95 cursor-pointer"
+            onClick={() => redirect(`active-book/${card.id}`)}
           >
             <div className="w-full aspect-square relative bg-slate-500 overflow-hidden">
               <Image layout="fill" alt="card img" src={card.image} />

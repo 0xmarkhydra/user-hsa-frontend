@@ -11,7 +11,7 @@ const HeaderView = () => {
           class="h-10"
           height="40"
           width="40"
-          src="./images/logo.png"
+          src="/images/logo.png"
         />
         <span class="ml-2 text-[#FF6B00] text-xl font-bold whitespace-nowrap">HSA Education</span>
       </div>
