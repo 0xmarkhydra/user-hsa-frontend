@@ -8,42 +8,42 @@ const useTeacherSuggestion = () => {
       {
         id: 1,
         name: "Nguyễn Văn A",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 2,
         name: "Trần Thị B",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 3,
         name: "Lê Minh C",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 4,
         name: "Phạm Hương D",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 5,
         name: "Hoàng Quốc E",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 6,
         name: "Lê Minh C",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 7,
         name: "Phạm Hương D",
-        avatar: "",
+        avatar: null,
       },
       {
         id: 8,
         name: "Hoàng Quốc E",
-        avatar: "",
+        avatar: null,
       },
     ]);
   }, []);
