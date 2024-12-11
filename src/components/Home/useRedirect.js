@@ -1,10 +1,12 @@
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const useRedirect = () => {
   const router = useRouter();
+  const currentPathName = usePathname();
   const redirect = (pathName) => {
-    console.log(pathName);
-    
+    if (pathName === currentPathName) {
+      router.refresh();
+    }
     router.push(pathName);
   };
 
