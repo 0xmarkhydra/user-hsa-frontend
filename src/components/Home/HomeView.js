@@ -7,8 +7,12 @@ import TeacherSuggestionView from "./TeacherSuggestion/TeacherSuggestionView";
 import CardView from "../Card/CardView";
 import { CARD_TYPE } from "../Card/useCard";
 import MenuTabView from "./Layout/MenuTab/MenuTabView";
+import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
+import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
 
 export default function HomeView() {
+  const { open, onOpenModal, onCloseModal, onSubmit, isSubmitting } =
+    useModalActiveBook();
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderView />
@@ -19,7 +23,10 @@ export default function HomeView() {
         </aside>
 
         <main className="w-full xs:flex-1 p-4 bg-gray-100">
-          <button class="w-full bg-[#4CAF50] text-white py-3 rounded-lg my-3 flex items-center justify-center lg:hidden">
+          <button
+            onClick={onOpenModal}
+            class="w-full bg-[#4CAF50] text-white py-3 rounded-lg my-3 flex items-center justify-center lg:hidden"
+          >
             <i class="fas fa-mars mr-2"></i>
             Kích hoạt sách
           </button>
@@ -31,13 +38,20 @@ export default function HomeView() {
         </main>
 
         <aside className="hidden xl:block shadow-sm">
-          <SideBarRight />
+          <SideBarRight onOpenModal={onOpenModal}/>
         </aside>
       </div>
 
       <FooterView />
 
       <MenuTabView />
+
+      <ModalActiveBook
+        isOpen={open}
+        onClose={onCloseModal}
+        onSubmit={onSubmit}
+        isSubmitting={isSubmitting}
+      />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const SideBarRight = () => {
+const SideBarRight = ({onOpenModal}) => {
   return (
     <div class="max-w-xs mx-auto p-4 overflow-y-scroll">
       <h1 class="text-[#2E7D32] text-2xl font-medium mb-4">BXH test</h1>
@@ -16,7 +16,7 @@ const SideBarRight = () => {
           0
         </div>
       </div>
-      <button class="w-full bg-[#4CAF50] text-white py-3 rounded-lg mb-6 flex items-center justify-center">
+      <button onClick={onOpenModal} class="w-full bg-[#4CAF50] text-white py-3 rounded-lg mb-6 flex items-center justify-center">
         <i class="fas fa-mars mr-2"></i>
         Kích hoạt sách
       </button>
