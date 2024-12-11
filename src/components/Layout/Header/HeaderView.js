@@ -1,9 +1,11 @@
+import useRedirect from "@/components/Home/useRedirect";
 import React from "react";
 
 const HeaderView = () => {
+  const {redirect} = useRedirect();
   return (
     <div class="w-screen px-4 py-3 flex items-center justify-between shadow-sm">
-      <div class="flex items-center">
+      <div class="flex items-center cursor-pointer" onClick={() => {redirect("/")}}>
         <img
           alt="HSA Education logo - A hexagonal shape in green with HSA letters inside"
           class="h-10"
