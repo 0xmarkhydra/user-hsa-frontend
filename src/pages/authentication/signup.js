@@ -1,9 +1,9 @@
-import SignInView from '@/components/SignIn/SignInView'
+import SignUpView from '@/components/SignUp/SignUpView'
 import React from 'react'
 
 const Index = () => {
     return (
-        <SignInView />
+        <SignUpView />
     )
 }
 

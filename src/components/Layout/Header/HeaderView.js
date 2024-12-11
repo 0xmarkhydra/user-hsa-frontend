@@ -15,7 +15,7 @@ const HeaderView = () => {
         />
         <span class="ml-2 text-[#FF6B00] text-xl font-bold whitespace-nowrap">HSA Education</span>
       </div>
-      <button class="bg-[#75B53C] hidden xs:block text-white px-4 py-2 rounded-md hover:bg-[#68a235]">
+      <button class="bg-[#75B53C] hidden xs:block text-white px-4 py-2 rounded-md hover:bg-[#68a235]" onClick={() => {redirect("/authentication/signin")}}>
         <i class="fas fa-sign-in-alt mr-2"></i>
         Đăng nhập
       </button>

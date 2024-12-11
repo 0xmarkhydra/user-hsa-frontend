@@ -1,3 +1,5 @@
+import { useParams, useRouter } from "next/navigation";
+
 const { useState, useEffect } = require("react");
 const fakeData = [
   {
@@ -47,6 +49,7 @@ const fakeData = [
 ];
 
 const fakeDataBook = {
+  id: 1,
   urlImg: "https://via.placeholder.com/150",
   bookName: "React for Beginners",
   userAuthor: "John Doe",
@@ -58,15 +61,22 @@ const fakeDataBook = {
 const useDetailBook = () => {
   const [sections, setSections] = useState([]);
   const [book, setBook] = useState({});
+  const router = useRouter();
+  const { id } = useParams();
 
   useEffect(() => {
     setSections(fakeData);
     setBook(fakeDataBook);
   }, []);
 
+  const onClickSection = (sectionId) => {
+    router.push(`/active-book/${id}/section?type=DE&sectionId=${sectionId}`);
+  };
+
   return {
     sections,
     book,
+    onClickSection,
   };
 };
 

@@ -8,7 +8,7 @@ import BookSection from "./BookSection/BookSectionView";
 import BookThumbnailView from "./BookSection/BookThumbnailView";
 
 const DetailBookView = () => {
-  const { sections, book } = useDetailBook();
+  const { sections, book, onClickSection } = useDetailBook();
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderView />
@@ -28,9 +28,7 @@ const DetailBookView = () => {
             expireDate={book.expireDate}
           />
           <BookSection
-            onClick={() => {
-              console.log("HELLO");
-            }}
+            onClick={onClickSection}
             data={sections}
           />
         </main>

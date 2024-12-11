@@ -21,7 +21,7 @@ const BookSectionItem = ({ item, onClick }) => {
   const handleToggle = () => setExpanded((prev) => !prev);
   const handleClick = () => {
     if (item.active) {
-      onClick(item);
+      onClick(item.id);
     }
   };
 
