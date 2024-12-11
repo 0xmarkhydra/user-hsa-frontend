@@ -12,7 +12,7 @@ const TeacherSuggestionView = () => {
             key={teacher.id}
             className="relative aspect-[3/4] overflow-hidden cursor-pointer rounded-md shrink-0 bg-gray-400 basis-1/3 xs:basis-1/4 sm:basis-1/5 md:basis-1/6"
           >
-            <Image src={""} layout="fill" alt="teacher avatar" />
+            <Image src={null} layout="fill" alt="teacher avatar" />
             <span className="absolute bottom-2 w-full text-center p-2 text-sm">
               {teacher.name}
             </span>

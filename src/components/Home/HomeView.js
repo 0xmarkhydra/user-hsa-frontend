@@ -1,12 +1,12 @@
-import HeaderView from "@/components/Home/Layout/Header/HeaderView";
-import SideBarLeftView from "@/components/Home/Layout/SideBarLeft/SideBarLeftView";
-import SideBarRight from "@/components/Home/Layout/SideBarRight/SideBarRightView";
-import FooterView from "@/components/Home/Layout/Footer/FooterView";
+import HeaderView from "@/components/Layout/Header/HeaderView";
+import SideBarLeftView from "@/components/Layout/SideBarLeft/SideBarLeftView";
+import SideBarRight from "@/components/Layout/SideBarRight/SideBarRightView";
+import FooterView from "@/components/Layout/Footer/FooterView";
 import SearchSugestion from "./SearchSuggestion/SearchSugestionView";
 import TeacherSuggestionView from "./TeacherSuggestion/TeacherSuggestionView";
 import CardView from "../Card/CardView";
 import { CARD_TYPE } from "../Card/useCard";
-import MenuTabView from "./Layout/MenuTab/MenuTabView";
+import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
 import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
 

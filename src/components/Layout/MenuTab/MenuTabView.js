@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import useScrollDirection from "./useScroll";
 import useMenuTab from "./useMenuTab";
+import useRedirect from "@/components/Home/useRedirect";
 
 const MenuTabView = () => {
   const scrollDirection = useScrollDirection();
   const { expanded, toggleMenu } = useMenuTab();
+  const { redirect } = useRedirect();
 
   return (
     <div
@@ -14,20 +16,26 @@ const MenuTabView = () => {
     >
       <div className="flex justify-around py-2 relative">
         {/* Home */}
-        <a className="flex flex-col items-center text-green-700" href="#">
+        <div
+          className="flex flex-col items-center text-green-700 cursor-pointer"
+          onClick={() => redirect("/")}
+        >
           <i className="fas fa-home text-xl"></i>
           <span className="text-sm">Home</span>
-        </a>
+        </div>
         {/* Sách */}
-        <a className="flex flex-col items-center text-green-700" href="#">
+        <div
+          className="flex flex-col items-center text-green-700 cursor-pointer"
+          onClick={() => redirect("/active-book")}
+        >
           <i className="fas fa-book text-xl"></i>
           <span className="text-sm">Sách</span>
-        </a>
+        </div>
         {/* Khóa học */}
-        <a className="flex flex-col items-center text-green-700" href="#">
+        <div className="flex flex-col items-center text-green-700">
           <i className="far fa-window-restore text-xl"></i>
           <span className="text-sm">Khóa học</span>
-        </a>
+        </div>
         {/* 3 Chấm */}
         <div
           className="flex flex-col items-center text-green-700 cursor-pointer"
