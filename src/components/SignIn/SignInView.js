@@ -28,19 +28,16 @@ const SignInView = () => {
 
         <form onSubmit={handleSubmit(handleLogin)}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Email</label>
+            <label className="block text-gray-700 mb-2">Email/Tên tài khoản</label>
             <div className="relative">
               <i className="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
               <input
-                type="email"
-                placeholder="email@gmail.com"
+                type="text"
+                placeholder="email@gmail.com | hsadev"
                 className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-                {...register("email", {
-                  required: "Email không được bỏ trống",
-                  pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: "Email không đúng định dạng",
-                  },
+                {...register("text", {
+                  required: "Email hoặc tên tài khoản không được bỏ trống",
+                  
                 })}
               />
             </div>
