@@ -39,10 +39,10 @@ class BookService {
     });
   }
 
-  getMenuBook() {
+  getMenuBook(bookId) {
     return api.request({
       method: "GET",
-      url: `/menu-book`,
+      url: `/menu-book?book_id=${bookId}`,
       baseURL: API_URL,
     });
   }

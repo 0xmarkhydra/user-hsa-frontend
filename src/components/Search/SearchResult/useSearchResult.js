@@ -13,7 +13,7 @@ const useSearchResult = (item, type) => {
     switch (type) {
       case TYPE.BOOK:
         if (item.active) {
-          router.push(`/active-book/${item.id}`);
+          router.push(`/sach-cua-toi/${item.id}`);
         } else {
           toast.error("Đối tượng chưa được kích hoạt!");
         }
@@ -21,7 +21,7 @@ const useSearchResult = (item, type) => {
       case TYPE.MENU_BOOK:
         if (item.active) {
           router.push(
-            `/active-book/${item.book_id}/section/?type=${item.type}&sectionId=${item.id}`
+            `/sach-cua-toi/${item.book_id}/section/?type=${item.type}&sectionId=${item.id}`
           );
         } else {
           toast.error("Đối tượng chưa được kích hoạt!");
@@ -30,7 +30,7 @@ const useSearchResult = (item, type) => {
       case TYPE.QUESTION:
         if (item.active) {
           router.push(
-            `/active-book/${item.book_id}/section/?type=De&questionId=${item.id}`
+            `/sach-cua-toi/${item.book_id}/section/?type=De&questionId=${item.id}`
           );
         } else {
           toast.error("Đối tượng chưa được kích hoạt!");

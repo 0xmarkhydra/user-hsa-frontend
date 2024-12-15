@@ -23,7 +23,7 @@ const SideBarLeftView = () => {
           <i class="far fa-comments text-xl w-8"></i>
           <span>Hỏi đáp</span>
         </div>
-        <div class="flex items-center text-green-700 cursor-pointer " onClick={() => redirect("/active-book")}>
+        <div class="flex items-center text-green-700 cursor-pointer " onClick={() => redirect("/sach-cua-toi")}>
           <i class="fas fa-book text-xl w-8"></i>
           <span>Sách đã kích hoạt</span>
         </div>

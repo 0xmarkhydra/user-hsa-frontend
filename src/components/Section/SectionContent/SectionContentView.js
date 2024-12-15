@@ -16,7 +16,7 @@ const SectionContentView = ({ data }) => {
     return;
   }
   return (
-    <div className="h-full flex flex-col overflow-y-auto">
+    <div className="h-full flex flex-col overflow-y-scroll max-h-screen mb-12">
       <div className="flex gap-2 items-center text-[12px] xs:text-[16px]">
         <span
           className="whitespace-nowrap cursor-pointer text-gray-600 hover:text-green-600"
@@ -29,7 +29,7 @@ const SectionContentView = ({ data }) => {
         </span>
         <span
           className="truncate cursor-pointer text-gray-600 hover:text-green-600"
-          onClick={() => router.push(`/active-book/${data.book_id}`)}
+          onClick={() => router.push(`/sach-cua-toi/${data.book_id}`)}
         >
           {data.bookName}
         </span>

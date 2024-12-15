@@ -1,5 +1,10 @@
 import React from "react";
 
+export const isIframeValid = (code) => {
+  const iframeRegex = /<iframe.*?src="(.*?)".*?>/;
+  return iframeRegex.test(code);
+};
+
 const VideoPlayerView = ({ video }) => {
   return isIframeValid(video) ? (
     <div

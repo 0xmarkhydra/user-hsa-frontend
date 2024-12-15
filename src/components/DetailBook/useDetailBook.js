@@ -38,7 +38,7 @@ const useDetailBook = () => {
         data: {
           data: { data },
         },
-      } = await Services.bookService.getMenuBook();
+      } = await Services.bookService.getMenuBook(id);
       setSections(data);
     } catch (error) {}
   };
@@ -50,7 +50,7 @@ const useDetailBook = () => {
 
   const onClickSection = (sectionId) => {
     if (id) {
-      router.push(`/active-book/${id}/section?type=DE&sectionId=${sectionId}`);
+      router.push(`/sach-cua-toi/${id}/section?type=DE&sectionId=${sectionId}`);
     }
   };
 
