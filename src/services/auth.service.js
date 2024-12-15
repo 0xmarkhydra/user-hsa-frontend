@@ -1,4 +1,4 @@
-import { API_URL, API_URL_PUBLIC, api } from "@/config/axios";
+import { api } from "@/config/axios";
 
 class AuthService {
     login(data) {

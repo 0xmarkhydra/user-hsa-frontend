@@ -21,7 +21,7 @@ const userStore = proxy({
             };
             typeof callbackSuccess === 'function' && callbackSuccess(response);
         }).catch((error) => {
-            console.error('Failed to fetch user info:', error);
+            console.warn('Failed to fetch user info:', error);
             this.userInfo = {};
             typeof callbackError === 'function' && callbackError(error);
         });

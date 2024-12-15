@@ -11,7 +11,7 @@ const useSignIn = () => {
   };
 
   const handleLogin = async ({username, password}) => {
-    console.log(username, password);
+    // console.log(username, password);
     Services.authService.login({username, password}).then((res) => {
         console.log(res);
         if(res.status === 201) {
