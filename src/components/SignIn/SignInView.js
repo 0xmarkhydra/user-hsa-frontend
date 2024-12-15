@@ -32,10 +32,10 @@ const SignInView = () => {
             <div className="relative">
               <i className="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
               <input
-                type="text"
-                placeholder="email@gmail.com | hsadev"
+                type="email"
+                placeholder="email@gmail.com"
                 className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
-                {...register("text", {
+                {...register("username", {
                   required: "Email hoặc tên tài khoản không được bỏ trống",
                   
                 })}

@@ -1,5 +1,4 @@
 import HeaderView from "@/components/Layout/Header/HeaderView";
-import SideBarLeftView from "@/components/Layout/SideBarLeft/SideBarLeftView";
 import SideBarRight from "@/components/Layout/SideBarRight/SideBarRightView";
 import FooterView from "@/components/Layout/Footer/FooterView";
 import SearchSugestion from "./SearchSuggestion/SearchSugestionView";
@@ -9,16 +8,20 @@ import { CARD_TYPE } from "../Card/useCard";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
 import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
-import {useSnapshot} from "valtio/react";
+import { useSnapshot } from "valtio/react";
 import Stores from "@/stores";
-import {useEffect} from "react";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
+import useUserInfo from "@/hooks/useUserInfo";
+import dynamic from "next/dynamic";
+
+const SideBarLeftView = dynamic(
+  () => import("@/components/Layout/SideBarLeft/SideBarLeftView"),
+  { ssr: false }
+);
 
 export default function HomeView() {
-    const {
-        userInfo
-    } = useSnapshot(Stores.userStore);
-    const router = useRouter();
+  const router = useRouter();
+  const { userInfo } = useUserInfo();
 
   console.log(JSON.stringify(userInfo, null, 4));
 
@@ -50,7 +53,7 @@ export default function HomeView() {
         </main>
 
         <aside className="hidden xl:block shadow-sm">
-          <SideBarRight onOpenModal={onOpenModal}/>
+          <SideBarRight onOpenModal={onOpenModal} />
         </aside>
       </div>
 

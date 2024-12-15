@@ -3,10 +3,13 @@ import React from "react";
 import useUserInfo from "@/hooks/useUserInfo";
 import SearchView from "@/components/Search/SearchView";
 import { useSearch } from "@/components/Search/useSearch";
+import useUserDropdown from "./UserDropdown/useUserDropdown";
+import UserDropdownView from "./UserDropdown/UserDropdownView";
 
 const HeaderView = () => {
   const { userInfo } = useUserInfo();
   const { redirect } = useRedirect();
+  const { show, toggleShow, logout } = useUserDropdown();
   const {
     wrapperRef,
     loading,
@@ -18,6 +21,7 @@ const HeaderView = () => {
     setShowSearch,
     showSearch,
     focusInput,
+    setInputValue,
   } = useSearch();
 
   return (
@@ -49,6 +53,7 @@ const HeaderView = () => {
           inputValue={inputValue}
           type={type}
           handleInputChange={handleInputChange}
+          setInputValue={setInputValue}
         />
       </div>
 
@@ -74,13 +79,17 @@ const HeaderView = () => {
               type={type}
               handleInputChange={handleInputChange}
               setShowSearch={setShowSearch}
+              setInputValue={setInputValue}
             />
           </div>
         )}
       </>
 
       {Object.keys(userInfo).length > 0 ? (
-        <div className="flex items-center hidden sm:block">
+        <div
+          className="items-center hidden sm:flex cursor-pointer"
+          onClick={toggleShow}
+        >
           <img
             src={userInfo?.avatar}
             alt="User Avatar"
@@ -92,12 +101,13 @@ const HeaderView = () => {
             }}
           />
           <span>{userInfo?.full_name || userInfo?.username}</span>
+          {show && <UserDropdownView logout={logout} />}
         </div>
       ) : (
         <button
           className="bg-[#75B53C] hidden sm:block text-white px-4 py-2 rounded-md hover:bg-[#68a235]"
           onClick={() => {
-            redirect("/authentication/signin");
+            redirect("/dang-nhap");
           }}
         >
           <i className="fas fa-sign-in-alt mr-2"></i>

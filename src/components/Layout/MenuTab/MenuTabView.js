@@ -26,7 +26,7 @@ const MenuTabView = () => {
         {/* Sách */}
         <div
           className="flex flex-col items-center text-green-700 cursor-pointer"
-          onClick={() => redirect("/active-book")}
+          onClick={() => redirect("/sach-cua-toi")}
         >
           <i className="fas fa-book text-xl"></i>
           <span className="text-sm">Sách</span>

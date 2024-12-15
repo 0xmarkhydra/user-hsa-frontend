@@ -10,9 +10,9 @@ const useSignIn = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const handleLogin = async ({email, password}) => {
-    console.log(email, password);
-    Services.authService.login({email, password}).then((res) => {
+  const handleLogin = async ({username, password}) => {
+    // console.log(username, password);
+    Services.authService.login({username, password}).then((res) => {
         console.log(res);
         if(res.status === 201) {
             window.localStorage.setItem("access_token", res?.data?.data?.accessToken);
