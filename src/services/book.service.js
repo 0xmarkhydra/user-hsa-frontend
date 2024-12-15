@@ -18,6 +18,18 @@ class BookService {
       },
     });
   }
+
+  activeBook(bookId, codeId) {
+    return api.request({
+      method: "POST",
+      url: `/codes/active`,
+      baseURL: API_URL,
+      data: {
+        book_code: Number(bookId),
+        code_id: codeId,
+      },
+    });
+  }
 }
 
 const bookService = new BookService();

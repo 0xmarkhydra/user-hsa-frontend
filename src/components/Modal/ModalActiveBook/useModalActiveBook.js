@@ -1,4 +1,6 @@
+import Services from "@/services";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const useModalActiveBook = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -11,13 +13,18 @@ const useModalActiveBook = () => {
     setOpen(false);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = ({ bookId, codeId }) => {
     setIsSubmitting(true);
-    setTimeout(() => {
-      console.log(data);
-      setIsSubmitting(false);
-      onCloseModal();
-    }, 1000);
+    Services.bookService
+      .activeBook(bookId, codeId)
+      .then(() => {
+        setIsSubmitting(false);
+        toast.success("Kích hoạt sách thành công");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("Lỗi khi kích hoạt sách, vui lòng thử lại sau")
+      });
   };
   return { onSubmit, isSubmitting, onOpenModal, onCloseModal, open };
 };

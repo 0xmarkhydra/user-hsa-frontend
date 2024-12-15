@@ -29,6 +29,9 @@ const usePagination = (data, itemsPerPage) => {
     }
   };
 
+  console.log(currentData);
+  
+
   return {
     currentData,
     currentPage,

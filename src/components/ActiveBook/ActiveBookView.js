@@ -1,10 +1,15 @@
 import HeaderView from "../Layout/Header/HeaderView";
 import FooterView from "../Layout/Footer/FooterView";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
-import BookCardView from "./BookCard.js/BookCardView";
+import BookCardView from "./BookCard/BookCardView";
 import BookCategoryView from "./BookCategory/BookCategoryView";
+import useActiveBook from "./useActiveBook";
+import useBookCard from "./BookCard/useBookCard";
 
 const ActiveBookView = () => {
+  const { activeBooks } = useActiveBook();
+  const { currentData, currentPage, totalPages, goToPage } =
+    useBookCard(activeBooks);
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderView />
@@ -14,7 +19,12 @@ const ActiveBookView = () => {
           <BookCategoryView />
         </div>
         <main className="flex-1 px-4 py-12">
-          <BookCardView />
+          <BookCardView
+            currentData={currentData}
+            currentPage={currentPage}
+            totalPages={totalPages}
+            goToPage={goToPage}
+          />
         </main>
       </div>
 

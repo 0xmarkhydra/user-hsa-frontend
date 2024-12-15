@@ -1,5 +1,6 @@
 import HomeView from "@/components/Home/HomeView";
 import localFont from "next/font/local";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,5 +15,10 @@ const geistMono = localFont({
 });
 
 export default function Home() {
-  return <HomeView />;
+  return (
+    <>
+      <HomeView />
+      <Toaster />
+    </>
+  );
 }

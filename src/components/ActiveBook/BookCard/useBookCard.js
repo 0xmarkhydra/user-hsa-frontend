@@ -77,17 +77,12 @@ const fakeCardList = [
   },
 ];
 
-const useBookCard = () => {
-  const [cardList, setCardList] = useState([]);
+const useBookCard = (books = []) => {
   const { currentData, currentPage, totalPages, nextPage, prevPage, goToPage } =
-    usePagination(fakeCardList, 4);
-
-  useEffect(() => {
-    setCardList(currentData);
-  }, [currentPage]);
+    usePagination(books, 4);
 
   return {
-    cardList,
+    currentData,
     currentPage,
     totalPages,
     nextPage,

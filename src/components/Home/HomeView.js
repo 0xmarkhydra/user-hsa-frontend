@@ -11,14 +11,12 @@ import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
 import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
 import {useSnapshot} from "valtio/react";
 import Stores from "@/stores";
-import {useEffect} from "react";
 import {useRouter} from "next/navigation";
+import useUserInfo from "@/hooks/useUserInfo";
 
 export default function HomeView() {
-    const {
-        userInfo
-    } = useSnapshot(Stores.userStore);
     const router = useRouter();
+    const { userInfo } = useUserInfo();
 
   console.log(JSON.stringify(userInfo, null, 4));
 

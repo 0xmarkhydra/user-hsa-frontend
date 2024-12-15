@@ -30,8 +30,8 @@ const ModalActiveBook = ({ isOpen, onClose, onSubmit, isSubmitting }) => {
               Mã sách
             </label>
             <input
-              id="bookCode"
-              {...register("bookCode", { required: "Mã sách là bắt buộc" })}
+              id="bookId"
+              {...register("bookId", { required: "Mã sách là bắt buộc" })}
               className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
             {errors.bookCode && (
@@ -47,8 +47,8 @@ const ModalActiveBook = ({ isOpen, onClose, onSubmit, isSubmitting }) => {
               Mã kích hoạt
             </label>
             <input
-              id="activationCode"
-              {...register("activationCode", {
+              id="codedId"
+              {...register("codedId", {
                 required: "Mã kích hoạt là bắt buộc",
               })}
               className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
