@@ -145,7 +145,7 @@ const SignUpView = () => {
               })}
             />
             <span className="text-sm text-gray-700">
-              Tôi đồng ý với "
+              Tôi đồng ý với &quot;
               <a href="#" className="underline">
                 Điều khoản Dịch vụ
               </a>{" "}
@@ -153,7 +153,7 @@ const SignUpView = () => {
               <a href="#" className="underline">
                 Chính sách Bảo mật
               </a>
-              "
+              &quot;
             </span>
           </div>
           {errors.terms && (
