@@ -32,7 +32,6 @@ const userStore = proxy({
 
   logout() {
     Services.authService.logOut();
-    this.userInfo = {};
   },
 });
 

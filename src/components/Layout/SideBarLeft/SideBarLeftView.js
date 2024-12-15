@@ -1,12 +1,15 @@
-import useRedirect from "@/components/Home/useRedirect";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const SideBarLeftView = () => {
-  const { redirect } = useRedirect();
+  const router = useRouter();
   return (
     <div class="max-w-xs min-w-[250px] mx-auto p-6 overflow-y-scroll">
       <div class="space-y-4">
-        <div class="flex items-center text-green-700 cursor-pointer ">
+        <div
+          class="flex items-center text-green-700 cursor-pointer "
+          onClick={() => router.push("/tai-khoan")}
+        >
           <i class="far fa-user text-xl w-8"></i>
           <span>Thông tin cá nhân</span>
         </div>
@@ -23,7 +26,10 @@ const SideBarLeftView = () => {
           <i class="far fa-comments text-xl w-8"></i>
           <span>Hỏi đáp</span>
         </div>
-        <div class="flex items-center text-green-700 cursor-pointer " onClick={() => redirect("/sach-cua-toi")}>
+        <div
+          class="flex items-center text-green-700 cursor-pointer "
+          onClick={() => router.push("/sach-cua-toi")}
+        >
           <i class="fas fa-book text-xl w-8"></i>
           <span>Sách đã kích hoạt</span>
         </div>

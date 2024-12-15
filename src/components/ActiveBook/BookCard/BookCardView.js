@@ -15,7 +15,7 @@ const BookCardView = ({ currentData, currentPage, totalPages, goToPage }) => {
             className="basis-full xs:basis-1/2 lg:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0 bg-white scale-95 cursor-pointer"
             onClick={() => redirect(`/sach-cua-toi/${book.id}`)}
           >
-            <div className="w-full aspect-square relative overflow-hidden">
+            <div className="w-full aspect-[3/4] relative overflow-hidden">
               <Image layout="fill" alt="card img" src={book.avatar} />
             </div>
             <div className="flex flex-col py-2 px-4">
