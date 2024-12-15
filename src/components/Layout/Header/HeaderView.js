@@ -97,7 +97,7 @@ const HeaderView = () => {
         <button
           className="bg-[#75B53C] hidden sm:block text-white px-4 py-2 rounded-md hover:bg-[#68a235]"
           onClick={() => {
-            redirect("/authentication/signin");
+            redirect("/dang-nhap");
           }}
         >
           <i className="fas fa-sign-in-alt mr-2"></i>
