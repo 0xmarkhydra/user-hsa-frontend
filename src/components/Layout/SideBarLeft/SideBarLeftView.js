@@ -14,10 +14,6 @@ const SideBarLeftView = () => {
           <span>Thông tin cá nhân</span>
         </div>
         <div class="border-b border-gray-300"></div>
-        <div class="flex items-center text-green-700 cursor-pointer">
-          <i class="far fa-window-restore text-xl w-8"></i>
-          <span>Khoá học</span>
-        </div>
         <div class="flex items-center text-green-700 cursor-pointer ">
           <i class="far fa-edit text-xl w-8"></i>
           <span>Đề thi</span>

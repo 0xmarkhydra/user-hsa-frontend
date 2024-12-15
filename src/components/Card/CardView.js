@@ -10,10 +10,6 @@ const CardView = ({ type }) => {
     <div className="mt-5 bg-white rounded-lg p-4 w-full overflow-hidden flex justify-center flex-col">
       <div className="flex justify-between my-3">
         <div className="text-green-600 text-xl font-semibold">{title}</div>
-        <div className="flex gap-3 text-green-600 text-xl">
-          <i class="fa-solid fa-arrow-left cursor-pointer"></i>
-          <i class="fa-solid fa-arrow-right cursor-pointer"></i>
-        </div>
       </div>
       <div className="overflow-x-scroll flex gap-3 w-full">
         {cardList.map((card) => (

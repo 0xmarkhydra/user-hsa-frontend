@@ -8,11 +8,10 @@ import { CARD_TYPE } from "../Card/useCard";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
 import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
-import { useSnapshot } from "valtio/react";
-import Stores from "@/stores";
 import { useRouter } from "next/navigation";
 import useUserInfo from "@/hooks/useUserInfo";
 import dynamic from "next/dynamic";
+import FeedBackView from "../FeedBack/FeedBackView";
 
 const SideBarLeftView = dynamic(
   () => import("@/components/Layout/SideBarLeft/SideBarLeftView"),
@@ -37,7 +36,7 @@ export default function HomeView() {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 overflow-y-scroll max-h-screen mb-6">
           <button
             onClick={onOpenModal}
             class="w-full bg-[#4CAF50] text-white py-3 rounded-lg my-3 flex items-center justify-center lg:hidden"
@@ -50,6 +49,8 @@ export default function HomeView() {
           <CardView type={CARD_TYPE.EXAM} />
           <CardView type={CARD_TYPE.COURSE} />
           <CardView type={CARD_TYPE.BOOK} />
+          <FeedBackView title={"Vinh danh học sinh 2k6"} />
+          <FeedBackView title={"Phản hồi của học sinh"} />
         </main>
 
         <aside className="hidden xl:block shadow-sm">

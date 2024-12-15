@@ -31,10 +31,9 @@ const MenuTabView = () => {
           <i className="fas fa-book text-xl"></i>
           <span className="text-sm">Sách</span>
         </div>
-        {/* Khóa học */}
         <div className="flex flex-col items-center text-green-700">
-          <i className="far fa-window-restore text-xl"></i>
-          <span className="text-sm">Khóa học</span>
+          <i className="far fa-user text-xl"></i>
+          <span className="text-sm">Tài khoản</span>
         </div>
         {/* 3 Chấm */}
         <div
@@ -48,10 +47,6 @@ const MenuTabView = () => {
         {expanded && scrollDirection === "up" && (
           <div className="bg-white rounded-tl-md rounded-tr-md shadow:sm p-4 absolute right-1 top-0 -translate-y-full w-[150px]">
             <div className="flex flex-col items-center gap-2 w-full">
-              <div className="text-green-700 text-sm flex justify-between w-full items-center">
-                <span>Thông tin</span>
-                <i className="far fa-user text-sm"></i>
-              </div>
               <div className="text-green-700 text-sm flex justify-between w-full items-center">
                 <span>Đề thi</span>
                 <i className="far fa-edit text-sm"></i>
