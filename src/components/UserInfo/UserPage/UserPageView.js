@@ -1,3 +1,4 @@
+import UserAvatarUploadView from "@/components/UserAvatarUpload/UserAvatarUploadView";
 import useUserInfo from "@/hooks/useUserInfo";
 import Image from "next/image";
 import React from "react";
@@ -60,11 +61,7 @@ const UserPageView = ({
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Avatar */}
               <div>
-                <div className="bg-gray-100 border border-gray-300 rounded-lg w-full h-48 flex items-center justify-center mb-4">
-                  <span className="text-gray-500 text-center">
-                    Thay đổi ảnh đại diện
-                  </span>
-                </div>
+                <UserAvatarUploadView userInfo={userInfo}/>
                 <p className="text-gray-600">
                   Mã số học viên:{" "}
                   <span className="text-green-600 font-semibold">104726</span>
