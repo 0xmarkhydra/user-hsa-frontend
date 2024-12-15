@@ -10,7 +10,7 @@ const MenuTabView = () => {
 
   return (
     <div
-      className={`block xs:hidden fixed bottom-0 left-0 right-0 bg-white shadow-md transition-transform duration-300 ${
+      className={`block md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-md transition-transform duration-300 ${
         scrollDirection === "down" ? "translate-y-full" : "translate-y-0"
       }`}
     >

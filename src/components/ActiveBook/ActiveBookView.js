@@ -15,7 +15,7 @@ const ActiveBookView = () => {
       <HeaderView />
 
       <div className="flex bg-gray-100 flex-col md:flex-row">
-        <div className="md:max-w-xs">
+        <div className="lg:max-w-xs max-w-[250px]">
           <BookCategoryView />
         </div>
         <main className="flex-1 px-4 py-12">

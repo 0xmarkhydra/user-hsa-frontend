@@ -8,11 +8,11 @@ const BookCategoryView = () => {
   return (
     <div className="p-6">
       <nav class="flex items-center mb-6">
-        <div onClick={() => redirect("/")} class="text-gray-500 cursor-pointer">
+        <div onClick={() => redirect("/")} class="text-gray-500 cursor-pointer whitespace-nowrap text-sm">
           Trang chủ
         </div>
         <span class="text-gray-500 mx-2"> {">"} </span>
-        <div class="text-green-600">Sách đã kích hoạt</div>
+        <div class="text-green-600 truncate text-sm">Sách đã kích hoạt</div>
       </nav>
 
       <h2 class="text-green-700 text-2xl mb-8 font-semibold">Danh mục</h2>

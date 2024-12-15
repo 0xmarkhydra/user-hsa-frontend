@@ -26,7 +26,7 @@ const QuestionItemView = ({ questionItem, index }) => {
           ))}
         </div>
         <div className="answer font-bold mt-4">
-          Đáp án: [{questionItem?.question?.answers.join(", ")}]
+          Đáp án: {questionItem?.question?.answers.join(", ")}
         </div>
         <div className="mt-2">
           <div
@@ -51,7 +51,11 @@ const QuestionItemView = ({ questionItem, index }) => {
                 className="my-4"
               />
               {questionItem.question?.video && (
-                <VideoPlayerView video={questionItem.question.video} />
+                <div className="flex items-center justify-center w-full bg-[rgba(0,0,0,0.75)]">
+                  <div className="w-full md:w-3/4 lg:w-2/3">
+                    <VideoPlayerView video={questionItem.question.video} />
+                  </div>
+                </div>
               )}
             </>
           )}

@@ -30,8 +30,6 @@ const SearchResultView = ({ item, type, closeSearch }) => {
       <div className="flex-1 flex flex-col justify-center ml-4">
         <span className="font-bold text-[16px] leading-5">{itemHeader()}</span>
         <div className="flex items-center text-sm text-gray-500 leading-8">
-          <span>{item.author || "Unknown"}</span>
-          <span className="mx-2 text-gray-300">|</span>
           <span>{`ID: ${item.code_id}`}</span>
         </div>
       </div>

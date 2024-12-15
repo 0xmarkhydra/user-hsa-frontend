@@ -8,18 +8,45 @@ export const isIframeValid = (code) => {
 const VideoPlayerView = ({ video }) => {
   return isIframeValid(video) ? (
     <div
-      dangerouslySetInnerHTML={{
-        __html: video.replace(
-          "<iframe",
-          '<iframe style="width: 100%; height: 350px;"'
-        ),
+      style={{
+        position: "relative",
+        width: "100%",
+        paddingTop: "56.25%",
+        overflow: "hidden",
       }}
-    />
+    >
+      <div
+        dangerouslySetInnerHTML={{
+          __html: video.replace(
+            "<iframe",
+            '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"'
+          ),
+        }}
+      />
+    </div>
   ) : (
-    <video width="100%" height="350" controls>
-      <source src={video} type="video/mp4" />
-      Trình duyệt của bạn không hỗ trợ video.
-    </video>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        paddingTop: "56.25%",
+        overflow: "hidden",
+      }}
+    >
+      <video
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+        controls
+      >
+        <source src={video} type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+    </div>
   );
 };
 
