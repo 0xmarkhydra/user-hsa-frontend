@@ -9,10 +9,22 @@ import { CARD_TYPE } from "../Card/useCard";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import ModalActiveBook from "../Modal/ModalActiveBook/ModalActiveBookView";
 import useModalActiveBook from "../Modal/ModalActiveBook/useModalActiveBook";
+import {useSnapshot} from "valtio/react";
+import Stores from "@/stores";
+import {useEffect} from "react";
+import {useRouter} from "next/navigation";
 
 export default function HomeView() {
+    const {
+        userInfo
+    } = useSnapshot(Stores.userStore);
+    const router = useRouter();
+
+  console.log(JSON.stringify(userInfo, null, 4));
+
   const { open, onOpenModal, onCloseModal, onSubmit, isSubmitting } =
     useModalActiveBook();
+
   return (
     <div className="flex flex-col min-h-screen">
       <HeaderView />
