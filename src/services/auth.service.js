@@ -8,6 +8,10 @@ class AuthService {
             data,
         });
     }
+
+    logOut(){
+        window.localStorage.removeItem("access_token");
+    }
 }
 
 const authService = new AuthService();

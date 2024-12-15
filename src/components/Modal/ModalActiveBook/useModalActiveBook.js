@@ -20,8 +20,10 @@ const useModalActiveBook = () => {
       .then(() => {
         setIsSubmitting(false);
         toast.success("Kích hoạt sách thành công");
+        setOpen(false)
       })
       .catch((err) => {
+        setIsSubmitting(false);
         console.error(err);
         toast.error("Lỗi khi kích hoạt sách, vui lòng thử lại sau")
       });

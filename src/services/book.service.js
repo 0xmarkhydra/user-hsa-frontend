@@ -30,6 +30,14 @@ class BookService {
       },
     });
   }
+
+  getDetailBook(bookId) {
+    return api.request({
+      method: "GET",
+      url: `/users/book-detail/${bookId}`,
+      baseURL: API_URL,
+    });
+  }
 }
 
 const bookService = new BookService();

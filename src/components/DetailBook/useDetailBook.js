@@ -62,7 +62,7 @@ const useDetailBook = () => {
   const [sections, setSections] = useState([]);
   const [book, setBook] = useState({});
   const router = useRouter();
-  const { id } = useParams();
+  const params = useParams();
 
   useEffect(() => {
     setSections(fakeData);
@@ -70,7 +70,9 @@ const useDetailBook = () => {
   }, []);
 
   const onClickSection = (sectionId) => {
-    router.push(`/active-book/${id}/section?type=DE&sectionId=${sectionId}`);
+    if(params?.id){
+      router.push(`/active-book/${id}/section?type=DE&sectionId=${sectionId}`);
+    }
   };
 
   return {
