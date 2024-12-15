@@ -5,7 +5,6 @@ import useRedirect from "@/components/Home/useRedirect";
 
 const BookCardView = ({ currentData, currentPage, totalPages, goToPage }) => {
   const { redirect } = useRedirect();
-  console.log(currentData);
 
   return (
     <>

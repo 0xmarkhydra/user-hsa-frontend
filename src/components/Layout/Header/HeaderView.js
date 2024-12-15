@@ -18,6 +18,7 @@ const HeaderView = () => {
     setShowSearch,
     showSearch,
     focusInput,
+    setInputValue
   } = useSearch();
 
   return (
@@ -49,6 +50,7 @@ const HeaderView = () => {
           inputValue={inputValue}
           type={type}
           handleInputChange={handleInputChange}
+          setInputValue={setInputValue}
         />
       </div>
 
@@ -74,6 +76,7 @@ const HeaderView = () => {
               type={type}
               handleInputChange={handleInputChange}
               setShowSearch={setShowSearch}
+              setInputValue={setInputValue}
             />
           </div>
         )}

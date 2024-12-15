@@ -4,16 +4,15 @@ function BookThumbnailView(props) {
   const { urlImg, bookName, userAuthor, tagName, startNum, expireDate, book } =
     props;
   const { name, author, tag, avatar } = book;
-  console.log(book);
 
   return (
-    <div className="flex bg-[#9999990D] sm:rounded-2xl px-4 py-2 sm:py-6 sm:flex-row flex-col">
+    <div className="flex bg-[#9999990D] sm:rounded-2xl py-2 sm:py-6 sm:flex-row flex-col">
       <div className="sm:w-44 h-44 w-full rounded-2xl flex items-center justify-center overflow-hidden">
         {avatar && (
           <img src={avatar} alt="img" className="object-cover w-full h-full" />
         )}
       </div>
-      <div className="flex flex-col mt-3 sm:mt-0 sm:ml-8 sm:justify-between gap-1">
+      <div className="flex flex-col mt-3 sm:mt-0 sm:ml-4 sm:justify-between gap-1 px-2">
         <div className="text-[#212121] font-bold text-2xl">{name}</div>
         <div className="text-[#262626] text-[16px]">{author}</div>
         <div className="flex items-center">

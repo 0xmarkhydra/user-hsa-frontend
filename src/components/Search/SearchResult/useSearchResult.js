@@ -10,7 +10,6 @@ const useSearchResult = (item, type) => {
   const router = useRouter();
 
   const handleClick = () => {
-    closeSearch && closeSearch();
     switch (type) {
       case TYPE.BOOK:
         if (item.active) {

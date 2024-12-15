@@ -1,9 +1,17 @@
-import React from 'react'
+import dynamic from "next/dynamic";
+import React from "react";
+import { Toaster } from "react-hot-toast";
+const SectionView = dynamic(() => import("@/components/Section/SectionView"), {
+  ssr: false,
+});
 
 const SectionPage = () => {
   return (
-    <div>section</div>
-  )
-}
+    <>
+      <SectionView />
+      <Toaster />
+    </>
+  );
+};
 
-export default SectionPage
+export default SectionPage;

@@ -10,16 +10,35 @@ function SearchView({
   type,
   handleInputChange,
   setShowSearch = () => {},
+  setInputValue,
 }) {
   return (
     <div ref={wrapperRef} className="relative w-full max-w-md">
       <input
         value={inputValue}
         onChange={(e) => handleInputChange(e.target.value)}
-        onBlur={() => setShowSearch(false)}
+        onBlur={() => {
+          if (listSearch.length > 0) {
+            setTimeout(() => {
+              setShowSearch(false);
+            }, 0);
+            return;
+          }
+          setShowSearch(false);
+        }}
         placeholder="Tìm kiếm sách, chương, đề..."
         className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
+      {inputValue && (
+        <div
+          className="absolute text-lg right-2 top-2 cursor-pointer text-gray-400"
+          onClick={() => {
+            setInputValue("");
+          }}
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      )}
       {inputValue && (
         <div className="absolute top-full w-full p-4 z-50 rounded-lg bg-white shadow-xl">
           {loading && (

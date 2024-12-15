@@ -12,10 +12,6 @@ export const useSearch = () => {
 
   let cleanTimeout;
 
-  const toggleShowSearch = () => {
-    setShowSearch(!showSearch);
-  };
-
   const handleSearch = async (textSearch) => {
     try {
       setHasSearched(true);
@@ -97,7 +93,6 @@ export const useSearch = () => {
     setListSearch,
     setHasSearched,
     setInputValue,
-    toggleShowSearch,
     setShowSearch,
     showSearch,
     focusInput,

@@ -28,7 +28,9 @@ const DetailBookView = () => {
             expireDate={book.expireDate}
             book={book}
           />
-          <BookSection onClick={onClickSection} data={sections} />
+          <div className="mb-12">
+            <BookSection onClick={onClickSection} data={sections} />
+          </div>
         </main>
       </div>
 
