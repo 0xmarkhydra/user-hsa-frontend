@@ -26,11 +26,9 @@ const DetailBookView = () => {
             tagName={book.tagName}
             startNum={book.startNum}
             expireDate={book.expireDate}
+            book={book}
           />
-          <BookSection
-            onClick={onClickSection}
-            data={sections}
-          />
+          <BookSection onClick={onClickSection} data={sections} />
         </main>
       </div>
 

@@ -18,7 +18,11 @@ const BookSection = ({ data, onClick }) => {
 const BookSectionItem = ({ item, onClick }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const handleToggle = () => setExpanded((prev) => !prev);
+  const handleToggle = () => {
+    if (Array.isArray(item.children) && item.children.length > 0) {
+      setExpanded((prev) => !prev);
+    }
+  };
   const handleClick = () => {
     if (item.active) {
       onClick(item.id);

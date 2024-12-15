@@ -38,6 +38,22 @@ class BookService {
       baseURL: API_URL,
     });
   }
+
+  getMenuBook() {
+    return api.request({
+      method: "GET",
+      url: `/menu-book`,
+      baseURL: API_URL,
+    });
+  }
+
+  getDetailSection(id) {
+    return api.request({
+      method: "GET",
+      url: `/menu-book/${id}`,
+      baseURL: API_URL,
+    });
+  }
 }
 
 const bookService = new BookService();

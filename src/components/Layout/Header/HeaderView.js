@@ -80,7 +80,7 @@ const HeaderView = () => {
       </>
 
       {Object.keys(userInfo).length > 0 ? (
-        <div className="flex items-center hidden sm:block">
+        <div className="items-center hidden sm:flex">
           <img
             src={userInfo?.avatar}
             alt="User Avatar"
