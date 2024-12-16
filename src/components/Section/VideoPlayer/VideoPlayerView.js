@@ -29,22 +29,11 @@ const VideoPlayerView = ({ video }) => {
     <div
       style={{
         position: "relative",
-        width: "100%",
-        paddingTop: "56.25%",
         overflow: "hidden",
       }}
-      className="md:border-[20px] border-[10px] rounded-xl border-white shadow-sm"
+      className="md:border-[20px] border-[10px] rounded-xl border-white shadow-sm aspect-video"
     >
-      <video
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-        controls
-      >
+      <video controls>
         <source src={video} type="video/mp4" />
         Trình duyệt của bạn không hỗ trợ video.
       </video>

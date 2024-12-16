@@ -63,7 +63,7 @@ export default function HomeView() {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100 overflow-y-scroll max-h-screen mb-6">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 overflow-y-scroll max-h-screen mb-6 relative">
           <button
             onClick={onOpenModal}
             class="w-full bg-[#4CAF50] text-white py-3 rounded-lg my-3 flex items-center justify-center lg:hidden"

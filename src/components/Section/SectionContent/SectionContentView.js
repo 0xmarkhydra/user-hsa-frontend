@@ -16,7 +16,7 @@ const SectionContentView = ({ data }) => {
     return;
   }
   return (
-    <div className="h-full flex flex-col overflow-y-scroll max-h-screen mb-12">
+    <div className="h-full flex flex-col overflow-y-scroll max-h-screen mb-12 relative" id="section-detail">
       <div className="flex gap-2 items-center text-[12px] xs:text-[16px]">
         <span
           className="whitespace-nowrap cursor-pointer text-gray-600 hover:text-green-600"

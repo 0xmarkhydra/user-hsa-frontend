@@ -47,7 +47,7 @@ const ActiveBookView = () => {
         <div className="lg:max-w-xs max-w-[250px]">
           <BookCategoryView />
         </div>
-        <main className="flex-1 px-4 py-12">
+        <main className="flex-1 px-4 py-12 relative">
           <BookCardView
             currentData={currentData}
             currentPage={currentPage}

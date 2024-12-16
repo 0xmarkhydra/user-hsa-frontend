@@ -52,7 +52,7 @@ const UserInfoView = () => {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 relative">
           <UserPageView
             editMode={editMode}
             toggleEditMode={toggleEditMode}

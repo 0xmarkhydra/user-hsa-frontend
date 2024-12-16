@@ -44,7 +44,7 @@ const SectionView = () => {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 relative">
           <SectionContentView data={sectionData} />
         </main>
       </div>

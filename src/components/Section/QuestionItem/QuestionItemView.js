@@ -1,6 +1,7 @@
 import React from "react";
 import VideoPlayerView from "@/components/Section/VideoPlayer/VideoPlayerView";
 import useQuestionItem from "./useQuestionItem";
+import QuestionModalView from "@/components/QuestionModal/QuestionModalView";
 
 const QuestionItemView = ({ questionItem, index }) => {
   const { viewDetail, toggleViewDetail } = useQuestionItem();
@@ -41,23 +42,11 @@ const QuestionItemView = ({ questionItem, index }) => {
             Xem lời giải chi tiết
           </div>
           {viewDetail && (
-            <>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    questionItem?.question?.solution ||
-                    "Chưa có lời giải chi tiết",
-                }}
-                className="my-4"
-              />
-              {questionItem.question?.video && (
-                <div className="flex items-center justify-center w-full bg-[rgba(0,0,0,0.75)]">
-                  <div className="w-full md:w-3/4 lg:w-2/3 mb-6">
-                    <VideoPlayerView video={questionItem.question.video} />
-                  </div>
-                </div>
-              )}
-            </>
+            <QuestionModalView
+              toggleViewDetail={toggleViewDetail}
+              question={questionItem.question}
+              index={index}
+            />
           )}
         </div>
       </div>

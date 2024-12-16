@@ -46,7 +46,7 @@ const DetailBookView = () => {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 relative">
           <BookThumbnailView
             urlImg={book.urlImg}
             bookName={book.bookName}
