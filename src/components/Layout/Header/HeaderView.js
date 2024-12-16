@@ -77,7 +77,7 @@ const HeaderView = ({ toggleShowSidebar }) => {
           </button>
         </div>
         {showSearch && (
-          <div className="w-full absolute left-0 scale-95">
+          <div className="w-full absolute left-0 scale-95 z-10">
             <SearchView
               wrapperRef={wrapperRef}
               loading={loading}

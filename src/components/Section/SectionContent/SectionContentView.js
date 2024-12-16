@@ -70,7 +70,6 @@ const SectionContentView = ({ data }) => {
               <QuestionItemView
                 key={`${questionItem.id}-${index}`}
                 questionItem={questionItem}
-                index={index}
               />
             ))
           ) : (

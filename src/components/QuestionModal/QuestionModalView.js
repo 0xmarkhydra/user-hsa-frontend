@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ReactDOM from "react-dom";
 import VideoPlayerView from "../Section/VideoPlayer/VideoPlayerView";
 
-const QuestionModalView = ({ question, toggleViewDetail, index }) => {
+const QuestionModalView = ({ question, toggleViewDetail }) => {
   return ReactDOM.createPortal(
     <div className="h-full overflow-hidden w-full bg-[rgba(0,0,0,0.5)] absolute right-0 z-10 top-0 flex justify-end">
       <motion.div
@@ -25,7 +25,6 @@ const QuestionModalView = ({ question, toggleViewDetail, index }) => {
         </div>
         <div className="flex flex-col p-4 mt-6">
           <div className="question font-bold mb-4 flex items-start gap-2">
-            <span className="text-base font-bold text-black">{index + 1}.</span>
             <span
               className="text-base text-black"
               dangerouslySetInnerHTML={{

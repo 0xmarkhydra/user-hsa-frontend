@@ -3,13 +3,16 @@ import VideoPlayerView from "@/components/Section/VideoPlayer/VideoPlayerView";
 import useQuestionItem from "./useQuestionItem";
 import QuestionModalView from "@/components/QuestionModal/QuestionModalView";
 
-const QuestionItemView = ({ questionItem, index }) => {
+const QuestionItemView = ({ questionItem }) => {
   const { viewDetail, toggleViewDetail } = useQuestionItem();
+
+  if (Object.keys(questionItem.question).length === 0) {
+    return null;
+  }
 
   return (
     <div className="question-item border-b p-4 mb-6 border bg-white rounded-xl">
       <div className="question font-bold mb-4 flex items-start gap-2">
-        <span className="text-base font-bold text-black">{index + 1}.</span>
         <span
           className="text-base text-black"
           dangerouslySetInnerHTML={{
@@ -45,7 +48,6 @@ const QuestionItemView = ({ questionItem, index }) => {
             <QuestionModalView
               toggleViewDetail={toggleViewDetail}
               question={questionItem.question}
-              index={index}
             />
           )}
         </div>
