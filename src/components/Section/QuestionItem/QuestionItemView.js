@@ -1,14 +1,18 @@
 import React from "react";
 import VideoPlayerView from "@/components/Section/VideoPlayer/VideoPlayerView";
 import useQuestionItem from "./useQuestionItem";
+import QuestionModalView from "@/components/QuestionModal/QuestionModalView";
 
-const QuestionItemView = ({ questionItem, index }) => {
+const QuestionItemView = ({ questionItem }) => {
   const { viewDetail, toggleViewDetail } = useQuestionItem();
 
+  if (Object.keys(questionItem.question).length === 0) {
+    return null;
+  }
+
   return (
-    <div className="question-item border-b pb-5 mb-6">
+    <div className="question-item border-b p-4 mb-6 border bg-white rounded-xl">
       <div className="question font-bold mb-4 flex items-start gap-2">
-        <span className="text-base font-bold text-black">{index + 1}.</span>
         <span
           className="text-base text-black"
           dangerouslySetInnerHTML={{
@@ -41,23 +45,10 @@ const QuestionItemView = ({ questionItem, index }) => {
             Xem lời giải chi tiết
           </div>
           {viewDetail && (
-            <>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html:
-                    questionItem?.question?.solution ||
-                    "Chưa có lời giải chi tiết",
-                }}
-                className="my-4"
-              />
-              {questionItem.question?.video && (
-                <div className="flex items-center justify-center w-full bg-[rgba(0,0,0,0.75)]">
-                  <div className="w-full md:w-3/4 lg:w-2/3">
-                    <VideoPlayerView video={questionItem.question.video} />
-                  </div>
-                </div>
-              )}
-            </>
+            <QuestionModalView
+              toggleViewDetail={toggleViewDetail}
+              question={questionItem.question}
+            />
           )}
         </div>
       </div>

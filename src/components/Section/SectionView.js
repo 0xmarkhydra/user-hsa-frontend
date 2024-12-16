@@ -17,7 +17,7 @@ const SectionView = () => {
       <HeaderView toggleShowSidebar={toggleShowSidebar} />
 
       {showSidebar && (
-          <div className="fixed z-10 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)]">
+          <div className="fixed z-10 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
             <motion.div
               className="bg-white flex h-full w-fit relative"
               initial={{ x: "-100%" }}
@@ -44,14 +44,12 @@ const SectionView = () => {
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 relative">
           <SectionContentView data={sectionData} />
         </main>
       </div>
 
       <FooterView />
-
-      <MenuTabView />
     </div>
   );
 };

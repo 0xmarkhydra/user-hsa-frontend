@@ -16,7 +16,7 @@ const SectionContentView = ({ data }) => {
     return;
   }
   return (
-    <div className="h-full flex flex-col overflow-y-scroll max-h-screen mb-12">
+    <div className="h-full flex flex-col overflow-y-scroll max-h-screen mb-12 relative" id="section-detail">
       <div className="flex gap-2 items-center text-[12px] xs:text-[16px]">
         <span
           className="whitespace-nowrap cursor-pointer text-gray-600 hover:text-green-600"
@@ -41,11 +41,11 @@ const SectionContentView = ({ data }) => {
         </span>
       </div>
 
-      <div className="w-full py-2 flex flex-col">
+      <div className="w-full py-2 flex flex-col mt-6">
         <div className="relative w-full aspect-[16/8] max-h-[350px]">
           <Image layout="fill" src={data.cover} alt="Section cover" />
         </div>
-        <h1 className="font-bold text-xl sm:text-2xl py-2">{data.title}</h1>
+        <h1 className="font-bold text-xl sm:text-2xl py-2 mt-2">{data.title}</h1>
       </div>
       {data.description && (
         <div
@@ -54,10 +54,8 @@ const SectionContentView = ({ data }) => {
         />
       )}
       {data.video && (
-        <div className="flex items-center justify-center w-full bg-[rgba(0,0,0,0.75)]">
-          <div className="w-full md:w-3/4 lg:w-2/3">
+        <div className="flex items-center justify-center w-full lg:w-[85%] mx-auto my-6">
             <VideoPlayerView video={data.video} />
-          </div>
         </div>
       )}
       <div className="flex flex-wrap gap-10 mt-3">
@@ -72,7 +70,6 @@ const SectionContentView = ({ data }) => {
               <QuestionItemView
                 key={`${questionItem.id}-${index}`}
                 questionItem={questionItem}
-                index={index}
               />
             ))
           ) : (

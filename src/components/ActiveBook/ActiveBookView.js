@@ -21,7 +21,7 @@ const ActiveBookView = () => {
       <HeaderView toggleShowSidebar={toggleShowSidebar} />
 
       {showSidebar && (
-        <div className="fixed z-10 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)]">
+        <div className="fixed z-10 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
           <motion.div
             className="bg-white flex h-full w-fit relative"
             initial={{ x: "-100%" }}
@@ -47,7 +47,7 @@ const ActiveBookView = () => {
         <div className="lg:max-w-xs max-w-[250px]">
           <BookCategoryView />
         </div>
-        <main className="flex-1 px-4 py-12">
+        <main className="flex-1 px-4 py-12 relative">
           <BookCardView
             currentData={currentData}
             currentPage={currentPage}

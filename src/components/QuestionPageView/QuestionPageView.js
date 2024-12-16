@@ -1,25 +1,17 @@
 import React from "react";
 import HeaderView from "../Layout/Header/HeaderView";
+import { motion } from "framer-motion";
 import SideBarLeftView from "../Layout/SideBarLeft/SideBarLeftView";
 import FooterView from "../Layout/Footer/FooterView";
-import MenuTabView from "../Layout/MenuTab/MenuTabView";
-import UserPageView from "./UserPage/UserPageView";
-import useUserInfoPage from "./useUserInfoPage";
+import useQuestionModal from "../QuestionModal/useQuestionModal";
 import useSideBarLeft from "../Layout/SideBarLeft/useSideBarLeft";
-import { motion } from "framer-motion";
+import QuestionItemView from "../Section/QuestionItem/QuestionItemView";
 
-const UserInfoView = () => {
-  const {
-    editMode,
-    toggleEditMode,
-    register,
-    handleSubmit,
-    formState,
-    setValue,
-    userInfo,
-  } = useUserInfoPage();
+const QuestionPageView = () => {
+  const { question } =
+    useQuestionModal();
+
   const { showSidebar, toggleShowSidebar } = useSideBarLeft();
-
   return (
     <div className="flex flex-col min-h-screen relative">
       <HeaderView toggleShowSidebar={toggleShowSidebar} />
@@ -47,20 +39,16 @@ const UserInfoView = () => {
         </div>
       )}
 
-      <div className="flex min-h-screen w-full">
+      <div className="flex min-h-screen w-full relative">
         <aside className="hidden md:block shadow-sm">
           <SideBarLeftView />
         </aside>
 
         <main className="w-full xs:flex-1 p-4 bg-gray-100 relative">
-          <UserPageView
-            editMode={editMode}
-            toggleEditMode={toggleEditMode}
-            userInfo={userInfo}
-            register={register}
-            handleSubmit={handleSubmit}
-            formState={formState}
-            setValue={setValue}
+          <QuestionItemView
+            questionItem={{
+              question: question,
+            }}
           />
         </main>
       </div>
@@ -70,4 +58,4 @@ const UserInfoView = () => {
   );
 };
 
-export default UserInfoView;
+export default QuestionPageView;
