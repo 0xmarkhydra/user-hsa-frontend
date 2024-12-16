@@ -50,8 +50,6 @@ const SectionView = () => {
       </div>
 
       <FooterView />
-
-      <MenuTabView />
     </div>
   );
 };
