@@ -5,6 +5,7 @@ import FooterView from "../Layout/Footer/FooterView";
 import MenuTabView from "../Layout/MenuTab/MenuTabView";
 import UserPageView from "./UserPage/UserPageView";
 import useUserInfoPage from "./useUserInfoPage";
+import useSideBarLeft from "../Layout/SideBarLeft/useSideBarLeft";
 
 const UserInfoView = () => {
   const {
@@ -14,12 +15,13 @@ const UserInfoView = () => {
     handleSubmit,
     formState,
     setValue,
-    userInfo
+    userInfo,
   } = useUserInfoPage();
+  const { showSidebar, toggleShowSidebar } = useSideBarLeft();
 
   return (
     <div className="flex flex-col min-h-screen">
-      <HeaderView />
+      <HeaderView toggleShowSidebar={toggleShowSidebar}/>
 
       <div className="flex min-h-screen w-full">
         <aside className="hidden md:block shadow-sm">
