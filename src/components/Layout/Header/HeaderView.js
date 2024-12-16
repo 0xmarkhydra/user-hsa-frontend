@@ -6,7 +6,7 @@ import { useSearch } from "@/components/Search/useSearch";
 import useUserDropdown from "./UserDropdown/useUserDropdown";
 import UserDropdownView from "./UserDropdown/UserDropdownView";
 
-const HeaderView = () => {
+const HeaderView = ({ toggleShowSidebar }) => {
   const { userInfo } = useUserInfo();
   const { redirect } = useRedirect();
   const { show, toggleShow, logout } = useUserDropdown();
@@ -26,6 +26,14 @@ const HeaderView = () => {
 
   return (
     <div class="w-[100%] px-4 py-3 flex items-center justify-between shadow-sm relative">
+      <div className="justify-self-start mr-2">
+        <button
+          className="p-1 border border-gray-200 w-7 h-7 flex items-center justify-center rounded-sm"
+          onClick={toggleShowSidebar}
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
       <div
         class="flex items-center cursor-pointer"
         onClick={() => {
