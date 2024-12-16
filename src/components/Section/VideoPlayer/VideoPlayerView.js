@@ -14,6 +14,7 @@ const VideoPlayerView = ({ video }) => {
         paddingTop: "56.25%",
         overflow: "hidden",
       }}
+      className="md:border-[20px] border-[10px] rounded-xl border-white shadow-sm"
     >
       <div
         dangerouslySetInnerHTML={{
@@ -32,6 +33,7 @@ const VideoPlayerView = ({ video }) => {
         paddingTop: "56.25%",
         overflow: "hidden",
       }}
+      className="md:border-[20px] border-[10px] rounded-xl border-white shadow-sm"
     >
       <video
         style={{

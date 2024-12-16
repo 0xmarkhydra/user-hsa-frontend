@@ -4,7 +4,7 @@ import React from "react";
 const SideBarLeftView = () => {
   const router = useRouter();
   return (
-    <div class="max-w-xs min-w-[250px] mx-auto p-6 overflow-y-scroll">
+    <div class="max-w-xs min-w-[250px] mx-auto p-6 overflow-y-hidden">
       <div class="space-y-4 h-screen flex flex-col">
         <div
           class="flex items-center text-green-700 cursor-pointer "
@@ -66,7 +66,7 @@ const SideBarLeftView = () => {
           </div>
         </div>
 
-        <div className="flex-1 flex justify-center items-center mt-6">
+        <div className="flex-1 flex justify-center items-center mt-6 md:hidden">
           <button className="bg-green-500 text-white px-6 py-2 rounded-md font-medium mt-6 w-full">Đăng xuất</button>
         </div>
       </div>

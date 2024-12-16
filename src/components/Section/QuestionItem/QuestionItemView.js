@@ -6,7 +6,7 @@ const QuestionItemView = ({ questionItem, index }) => {
   const { viewDetail, toggleViewDetail } = useQuestionItem();
 
   return (
-    <div className="question-item border-b pb-5 mb-6">
+    <div className="question-item border-b p-4 mb-6 border bg-white rounded-xl">
       <div className="question font-bold mb-4 flex items-start gap-2">
         <span className="text-base font-bold text-black">{index + 1}.</span>
         <span
@@ -52,7 +52,7 @@ const QuestionItemView = ({ questionItem, index }) => {
               />
               {questionItem.question?.video && (
                 <div className="flex items-center justify-center w-full bg-[rgba(0,0,0,0.75)]">
-                  <div className="w-full md:w-3/4 lg:w-2/3">
+                  <div className="w-full md:w-3/4 lg:w-2/3 mb-6">
                     <VideoPlayerView video={questionItem.question.video} />
                   </div>
                 </div>
