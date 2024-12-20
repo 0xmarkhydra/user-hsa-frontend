@@ -1,17 +1,18 @@
+import Services from "@/services";
 import { useEffect, useState } from "react";
 
 const useSuggestTion = () => {
   const [listKeys, setListKeys] = useState([]);
 
   useEffect(() => {
-    setListKeys([
-      "Theo dõi thông tin kỳ thi ở đâu?",
-      "Cách đăng ký khóa học",
-      "Hỏi đáp về kỳ thi",
-      "Tài liệu ôn thi HSA",
-      "Từ khoá 5",
-      "Thông tin về kỳ thi HSA",
-    ]);
+    Services.blockService.getConfigData("hotsearch").then(
+      (response) => {
+        setListKeys(response.data.data);
+      }
+    ).catch(err => {
+      console.warn(err);
+      setListKeys([]);
+    })
   }, []);
   return {
     listKeys,

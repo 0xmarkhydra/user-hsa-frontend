@@ -1,20 +1,15 @@
 import { API_URL, API_URL_PUBLIC, api } from "@/config/axios";
 
-class BlogService {
-    getListBlogs(params, isServerSide = false) {
+class BlockService {
+    getConfigData(key, isServerSide = false) {
         return api.request({
             method: "GET",
-            url: `/books`,
-            params: {
-                page: params?.page || 1,
-                take: params?.take || 10,
-                ...params,
-            },
-            baseURL: isServerSide ? API_URL : API_URL_PUBLIC,
-        });
+            url: `/config-data/${key}`,
+            baseURL: isServerSide? API_URL : API_URL_PUBLIC,
+        })
     }
 }
 
-const blogService = new BlogService();
+const blockService = new BlockService();
 
-export default blogService;
+export default blockService;
