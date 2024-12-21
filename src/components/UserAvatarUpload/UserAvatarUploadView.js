@@ -6,7 +6,7 @@ const UserAvatarUploadView = ({ avatar, onChange }) => {
   const { url , handleChange } = useUserAvatarUpload(avatar, onChange);
   
   return (
-    <div className="bg-gray-100 border relative border-gray-300 rounded-lg w-full aspect-square flex items-center justify-center mb-4 cursor-pointer">
+    <div className="bg-gray-100 border relative border-gray-300 rounded-lg w-full aspect-square flex items-center justify-center mb-4 cursor-pointer overflow-hidden">
       {url && (
         <Image layout="fill" src={url} alt="user avatar" />
       )}
