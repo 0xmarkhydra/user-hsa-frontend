@@ -7,6 +7,7 @@ import UserPageView from "./UserPage/UserPageView";
 import useUserInfoPage from "./useUserInfoPage";
 import useSideBarLeft from "../Layout/SideBarLeft/useSideBarLeft";
 import { motion } from "framer-motion";
+import { Toaster } from "react-hot-toast";
 
 const UserInfoView = () => {
   const {
@@ -16,7 +17,9 @@ const UserInfoView = () => {
     handleSubmit,
     formState,
     setValue,
+    control,
     userInfo,
+    handleSubmitEdit,
   } = useUserInfoPage();
   const { showSidebar, toggleShowSidebar } = useSideBarLeft();
 
@@ -61,11 +64,15 @@ const UserInfoView = () => {
             handleSubmit={handleSubmit}
             formState={formState}
             setValue={setValue}
+            control={control}
+            handleSubmitEdit={handleSubmitEdit}
           />
         </main>
       </div>
 
       <FooterView />
+
+      <Toaster />
     </div>
   );
 };

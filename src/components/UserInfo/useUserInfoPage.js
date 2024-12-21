@@ -1,12 +1,13 @@
 import useUserInfo from "@/hooks/useUserInfo";
-import Stores from "@/stores";
+import Services from "@/services";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const useUserInfoPage = () => {
   const [editMode, setEditMode] = useState(false);
-  const { userInfo } = useUserInfo();
+  const { userInfo, updateUserInfo } = useUserInfo();
   const router = useRouter();
 
   const {
@@ -15,6 +16,7 @@ const useUserInfoPage = () => {
     formState: { errors },
     setValue,
     reset,
+    control,
   } = useForm();
 
   useEffect(() => {
@@ -24,10 +26,11 @@ const useUserInfoPage = () => {
     }
     if (userInfo) {
       reset({
-        fullname: userInfo.full_name || "",
+        avatar: userInfo.avatar || "",
+        full_name: userInfo.full_name || "",
         username: userInfo.username || "",
         email: userInfo.email || "",
-        phone: userInfo.phone_number || "-",
+        phone_number: userInfo.phone_number || "-",
       });
     }
   }, [userInfo, reset]);
@@ -36,14 +39,27 @@ const useUserInfoPage = () => {
     setEditMode((prev) => !prev);
   };
 
+  const handleSubmitEdit = async (data) => {
+    try {
+      const res = await updateUserInfo({ ...data });
+      toast.success("Cập nhật thông tin thành công!");
+      toggleEditMode();
+    } catch (error) {
+      console.warn(error);
+      toast.error("Cập nhật thông tin thất bại!");
+    }
+  };
+
   return {
     editMode,
     toggleEditMode,
     register,
     handleSubmit,
+    control,
     formState: { errors },
     setValue,
     userInfo,
+    handleSubmitEdit,
   };
 };
 

@@ -1,11 +1,14 @@
 import Image from "next/image";
 import React from "react";
+import useUserAvatarUpload from "./useUserAvatarUpload";
 
-const UserAvatarUploadView = ({ userInfo }) => {
+const UserAvatarUploadView = ({ avatar, onChange }) => {
+  const { url , handleChange } = useUserAvatarUpload(avatar, onChange);
+  
   return (
     <div className="bg-gray-100 border relative border-gray-300 rounded-lg w-full aspect-square flex items-center justify-center mb-4 cursor-pointer">
-      {userInfo?.avatar && (
-        <Image layout="fill" src={userInfo?.avatar} alt="user avatar" />
+      {url && (
+        <Image layout="fill" src={url} alt="user avatar" />
       )}
 
       <label
@@ -17,14 +20,9 @@ const UserAvatarUploadView = ({ userInfo }) => {
           type="file"
           className="hidden"
           accept="image/*"
-          onChange={(e) => {
-            const file = e.target.files[0];
-            if (file) {
-              console.log("Selected file:", file);
-            }
-          }}
+          onChange={handleChange}
         />
-        {!userInfo?.avatar && <span>Thay đổi ảnh đại diện</span>}
+        {!url && <span>Thay đổi ảnh đại diện</span>}
       </label>
     </div>
   );

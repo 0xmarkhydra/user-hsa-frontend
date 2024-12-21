@@ -2,7 +2,7 @@ import UserAvatarUploadView from "@/components/UserAvatarUpload/UserAvatarUpload
 import useUserInfo from "@/hooks/useUserInfo";
 import Image from "next/image";
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Controller } from "react-hook-form";
 
 const UserPageView = ({
   editMode,
@@ -12,13 +12,12 @@ const UserPageView = ({
   formState: { errors },
   setValue,
   userInfo,
+  control,
+  handleSubmitEdit,
 }) => {
-  const onSubmit = (data) => {
-    console.log("Updated Data:", data);
-  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-100">
+    <form onSubmit={handleSubmit(handleSubmitEdit)} className="bg-gray-100">
       <div className="container mx-auto py-10">
         <div className="flex flex-col lg:flex-row lg:space-x-6">
           {/* Sidebar */}
@@ -61,7 +60,16 @@ const UserPageView = ({
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Avatar */}
               <div>
-                <UserAvatarUploadView userInfo={userInfo}/>
+                <Controller
+                  control={control}
+                  name="avatar"
+                  render={({ field }) => (
+                    <UserAvatarUploadView
+                      avatar={field.value}
+                      onChange={field.onChange}
+                    />
+                  )}
+                />
                 <p className="text-gray-600">
                   Mã số học viên:{" "}
                   <span className="text-green-600 font-semibold">104726</span>
@@ -83,7 +91,7 @@ const UserPageView = ({
                   </label>
                   <input
                     type="text"
-                    {...register("fullname", { required: true })}
+                    {...register("full_name", { required: true })}
                     disabled={!editMode}
                     className="w-full border border-gray-300 rounded-lg p-2 focus:border-green-500"
                   />
@@ -136,7 +144,7 @@ const UserPageView = ({
                   </label>
                   <input
                     type="tel"
-                    {...register("phone", { required: true })}
+                    {...register("phone_number", { required: true })}
                     disabled={!editMode}
                     className="w-full border border-gray-300 rounded-lg p-2 focus:border-green-500"
                   />

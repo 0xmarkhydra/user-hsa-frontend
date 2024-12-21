@@ -4,7 +4,7 @@ import Stores from "@/stores";
 import { usePathname, useRouter } from "next/navigation";
 
 const useUserInfo = () => {
-  const { userInfo } = useSnapshot(Stores.userStore);
+  const { userInfo, updateUserInfo } = useSnapshot(Stores.userStore);
   const router = useRouter();
   const pathName = usePathname();
 
@@ -29,6 +29,7 @@ const useUserInfo = () => {
   }, []);
   return {
     userInfo,
+    updateUserInfo
   };
 };
 
