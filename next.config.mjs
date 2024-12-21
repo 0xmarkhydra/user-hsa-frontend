@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["api.hsabook.vn"],
+    domains: ["api.hsabook.vn", "hsa-education.sgp1.digitaloceanspaces.com"],
   },
 };
 
