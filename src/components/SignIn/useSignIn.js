@@ -23,7 +23,6 @@ const useSignIn = () => {
             res?.data?.data?.accessToken
           );
           // redirect to home page
-          toast.success("Đăng nhập thành công!");
           router.push("/");
         }
       })

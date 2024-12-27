@@ -46,7 +46,7 @@ const BookCardFooterView = ({ currentPage, totalPages, onPageChange }) => {
     <div className="flex justify-center items-center mt-4">
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        className="px-3 py-1 mx-1 rounded-md transition-colors text-sm bg-gray-200 hover:bg-green-100"
+        className="px-3 py-1 mx-1 rounded-md transition-colors text-sm bg-gray-200 hover:bg-green-100 cursor-pointer"
         disabled={currentPage === 1}
       >
         Previous
@@ -56,7 +56,7 @@ const BookCardFooterView = ({ currentPage, totalPages, onPageChange }) => {
         onClick={() =>
           currentPage < totalPages && onPageChange(currentPage + 1)
         }
-        className="px-3 py-1 mx-1 rounded-md transition-colors text-sm bg-gray-200 hover:bg-green-100"
+        className="px-3 py-1 mx-1 rounded-md transition-colors text-sm bg-gray-200 hover:bg-green-100 cursor-pointer"
         disabled={currentPage === totalPages}
       >
         Next

@@ -9,7 +9,7 @@ const userStore = proxy({
       const response = await Services.userService.getInfo();
       console.log(response);
 
-      this.userInfo = {
+      userStore.userInfo = {
         ...response?.data?.data,
       };
 
@@ -32,7 +32,7 @@ const userStore = proxy({
       const response = await Services.userService.updateUserInfo(data);
       console.log(response);
 
-      this.userInfo = {
+      userStore.userInfo = {
         ...this.userInfo,
         ...data,
       };
@@ -44,9 +44,7 @@ const userStore = proxy({
   logout() {
     try {
       Services.authService.logOut();
-
-      // Xóa thông tin người dùng sau khi logout
-      this.userInfo = {};
+      userStore.userInfo = {};
     } catch (error) {
       console.error("Logout failed:", error);
     }

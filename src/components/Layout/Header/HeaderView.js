@@ -26,7 +26,7 @@ const HeaderView = ({ toggleShowSidebar }) => {
 
   return (
     <div class="w-[100%] px-4 py-3 flex items-center justify-between shadow-sm relative">
-      <div className="justify-self-start mr-2">
+      <div className="justify-self-start mr-2 block md:hidden">
         <button
           className="p-1 border border-gray-200 w-7 h-7 flex items-center justify-center rounded-sm"
           onClick={toggleShowSidebar}

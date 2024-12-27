@@ -20,7 +20,7 @@ const useUserInfoPage = () => {
   } = useForm();
 
   useEffect(() => {
-    if (!userInfo) {
+    if (Object.keys(userInfo).length == 0) {
       router.push("/dang-nhap");
       return;
     }

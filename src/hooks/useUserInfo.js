@@ -4,7 +4,7 @@ import Stores from "@/stores";
 import { usePathname, useRouter } from "next/navigation";
 
 const useUserInfo = () => {
-  const { userInfo, updateUserInfo } = useSnapshot(Stores.userStore);
+  const { userInfo, updateUserInfo, logout } = useSnapshot(Stores.userStore);
   const router = useRouter();
   const pathName = usePathname();
 
@@ -21,7 +21,6 @@ const useUserInfo = () => {
               }
               router.push("/dang-nhap");
             }
-            // router.push("/auth/sign")
           }
         )
         .catch(console.log);
@@ -29,7 +28,8 @@ const useUserInfo = () => {
   }, []);
   return {
     userInfo,
-    updateUserInfo
+    updateUserInfo,
+    logout
   };
 };
 
