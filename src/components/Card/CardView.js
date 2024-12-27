@@ -15,19 +15,29 @@ const CardView = ({ type }) => {
         {cardList.map((card) => (
           <div
             key={card.id}
-            className="basis-full xs:basis-1/2 sm:basis-1/3 md:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0"
+            className="basis-full xs:basis-1/2 sm:basis-1/3 md:basis-1/4 rounded-md overflow-hidden shadow-sm shrink-0 bg-gray-50"
           >
-            <div className="w-full aspect-square relative bg-slate-500 overflow-hidden">
-              <Image layout="fill" alt="card img" src={card.image} />
+            <div className="w-full aspect-[3/4] relative overflow-hidden bg-slate-100">
+              <Image layout="fill" alt="card img" src={card.avatar} />
               {type === CARD_TYPE.BOOK && (
                 <span className="absolute right-1 top-1 w-12 font-semibold bg-red-600 text-[12px] rounded-full text-white text-center p-1">
-                  -{card.discard}
+                  -{card.discard || "50%"}
                 </span>
               )}
             </div>
-            <div className="flex flex-col py-2">
-              <h4 className="font-semibold text-green-600">{card.title}</h4>
-              <p>{card.content}</p>
+            <div className="flex flex-col p-2">
+              <h4 className="font-semibold text-green-600 text-lg">
+                {card.name}
+              </h4>
+              <div className="mb-4">
+                <div className="flex items-end gap-1 mb-2 text-sm text-green-600">
+                  <i class="fa-regular fa-user"></i>
+                  <span className="text-end leading-none">
+                    {card.authors || "HSA Education"}
+                  </span>
+                </div>
+                <p className="text-gray-600 text-sm text-green-600">{card.code_id}</p>
+              </div>
             </div>
           </div>
         ))}

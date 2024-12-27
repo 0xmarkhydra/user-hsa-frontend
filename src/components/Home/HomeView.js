@@ -74,7 +74,6 @@ export default function HomeView() {
           <SearchSugestion />
           <TeacherSuggestionView />
           <CardView type={CARD_TYPE.EXAM} />
-          <CardView type={CARD_TYPE.COURSE} />
           <CardView type={CARD_TYPE.BOOK} />
           <FeedBackView title={"Vinh danh học sinh 2k6"} />
           <FeedBackView title={"Phản hồi của học sinh"} />
