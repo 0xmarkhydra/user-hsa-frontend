@@ -1,7 +1,10 @@
+import useUserInfo from "@/hooks/useUserInfo";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const SideBarLeftView = () => {
+  const { userInfo } = useUserInfo();
+  const { logout } = useUserInfo();
   const router = useRouter();
   return (
     <div class="max-w-xs min-w-[250px] mx-auto p-6 overflow-y-hidden">
@@ -67,7 +70,14 @@ const SideBarLeftView = () => {
         </div>
 
         <div className="flex-1 flex justify-center items-center mt-6 md:hidden">
-          <button className="bg-green-500 text-white px-6 py-2 rounded-md font-medium mt-6 w-full">Đăng xuất</button>
+          {Object.keys(userInfo).length > 0 && (
+            <button
+              className="bg-green-500 text-white px-6 py-2 rounded-md font-medium mt-6 w-full"
+              onClick={logout}
+            >
+              Đăng xuất
+            </button>
+          )}
         </div>
       </div>
     </div>

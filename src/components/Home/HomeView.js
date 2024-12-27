@@ -36,7 +36,7 @@ export default function HomeView() {
       <HeaderView toggleShowSidebar={toggleShowSidebar} />
 
       {showSidebar && (
-          <div className="fixed z-10 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
+          <div className="fixed z-20 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
             <motion.div
               className="bg-white flex h-full w-fit relative"
               initial={{ x: "-100%" }}
@@ -74,7 +74,6 @@ export default function HomeView() {
           <SearchSugestion />
           <TeacherSuggestionView />
           <CardView type={CARD_TYPE.EXAM} />
-          <CardView type={CARD_TYPE.COURSE} />
           <CardView type={CARD_TYPE.BOOK} />
           <FeedBackView title={"Vinh danh học sinh 2k6"} />
           <FeedBackView title={"Phản hồi của học sinh"} />

@@ -62,6 +62,14 @@ class BookService {
       baseURL: API_URL,
     });
   }
+
+  getNewBook() {
+    return api.request({
+      method: "GET",
+      url: `/books`,
+      baseURL: API_URL,
+    });
+  }
 }
 
 const bookService = new BookService();

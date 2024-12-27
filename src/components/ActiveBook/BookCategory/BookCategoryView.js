@@ -6,7 +6,7 @@ const BookCategoryView = () => {
   const { redirect } = useRedirect();
   const { category } = useBookCategory();
   return (
-    <div className="p-6">
+    <div className="p-6 w-full">
       <nav class="flex items-center mb-6">
         <div onClick={() => redirect("/")} class="text-gray-500 cursor-pointer whitespace-nowrap text-sm">
           Trang chủ

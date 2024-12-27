@@ -67,6 +67,7 @@ const UserPageView = ({
                     <UserAvatarUploadView
                       avatar={field.value}
                       onChange={field.onChange}
+                      disabled={!editMode}
                     />
                   )}
                 />
