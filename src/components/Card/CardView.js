@@ -25,14 +25,14 @@ const CardView = ({ type }) => {
                 </span>
               )}
             </div>
-            <div className="flex flex-col p-2">
+            <div className="flex flex-col p-2 justify-between">
               <h4 className="font-semibold text-green-600 text-lg">
                 {card.name}
               </h4>
               <div className="mb-4">
-                <div className="flex items-end gap-1 mb-2 text-sm text-green-600">
+                <div className="flex gap-2 mb-2 text-sm text-green-600 items-center">
                   <i class="fa-regular fa-user"></i>
-                  <span className="text-end leading-none">
+                  <span className="leading-none line-clamp-2">
                     {card.authors || "HSA Education"}
                   </span>
                 </div>
