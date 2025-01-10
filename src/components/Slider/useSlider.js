@@ -12,31 +12,25 @@ const useSlider = () => {
   const [intervalId, setIntervalId] = useState(null);
 
   const goToIndex = (index) => {
-    setCurrentIndex((prevIndex) => {
-      if (index >= 0 && index < images.length && index !== prevIndex) {
-        return index;
-      }
-      return prevIndex;
-    });
+    if (index >= 0 && index < images.length) {
+      setCurrentIndex(index);
+    }
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      goToIndex((currentIndex + 1) % images.length);
-    }, 10000);
-    setIntervalId(interval);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, images.length]);
 
   const resetInterval = () => {
     clearInterval(intervalId);
     const newInterval = setInterval(
-      () => goToIndex((currentIndex + 1) % images.length),
+      () => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length),
       10000
     );
     setIntervalId(newInterval);
   };
+
+  useEffect(() => {
+    resetInterval();
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return { currentIndex, goToIndex, images, resetInterval };
 };
