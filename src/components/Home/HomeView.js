@@ -14,6 +14,7 @@ import dynamic from "next/dynamic";
 import FeedBackView from "../FeedBack/FeedBackView";
 import useSideBarLeft from "../Layout/SideBarLeft/useSideBarLeft";
 import { motion } from "framer-motion";
+import SliderView from "../Slider/SliderView";
 
 const SideBarLeftView = dynamic(
   () => import("@/components/Layout/SideBarLeft/SideBarLeftView"),
@@ -69,6 +70,7 @@ export default function HomeView() {
             <i class="fas fa-mars mr-2"></i>
             Kích hoạt sách
           </button>
+          <SliderView />
           <SearchSugestion />
           <TeacherSuggestionView />
           <CardView type={CARD_TYPE.EXAM} />

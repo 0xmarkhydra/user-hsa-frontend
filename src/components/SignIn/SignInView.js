@@ -9,7 +9,8 @@ const SignInView = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { showPassword, toggleShowPassword, handleLogin } = useSignIn();
+  const { showPassword, toggleShowPassword, handleLogin, error, setError } =
+    useSignIn();
   const router = useRouter();
 
   return (
@@ -59,11 +60,8 @@ const SignInView = () => {
                 className="w-full pl-10 pr-10 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
                 {...register("password", {
                   required: "Mật khẩu không được bỏ trống",
-                  minLength: {
-                    value: 6,
-                    message: "Mật khẩu ít nhất có 6 kí tự",
-                  },
                 })}
+                onChange={() => setError("")}
               />
               <i
                 className={`fas ${
@@ -76,6 +74,9 @@ const SignInView = () => {
               <span className="text-red-500 text-sm">
                 {errors.password.message}
               </span>
+            )}
+            {error && (
+              <span className="text-red-500 text-sm my-2">{error}</span>
             )}
           </div>
 

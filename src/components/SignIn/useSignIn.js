@@ -1,18 +1,17 @@
 import { useState } from "react";
 import Services from "@/services";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 const useSignIn = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const toggleShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
 
   const handleLogin = async ({ username, password }) => {
-    // console.log(username, password);
     Services.authService
       .login({ username, password })
       .then((res) => {
@@ -22,16 +21,15 @@ const useSignIn = () => {
             "access_token",
             res?.data?.data?.accessToken
           );
-          // redirect to home page
           router.push("/");
         }
       })
       .catch((err) => {
-        toast.error("Đăng nhập thất bại, kiểm tra lại email và mật khẩu");
+        setError("Đăng nhập thất bại, kiểm tra lại email và mật khẩu");
         console.log(err);
       });
   };
-  return { showPassword, toggleShowPassword, handleLogin };
+  return { showPassword, toggleShowPassword, handleLogin, error, setError };
 };
 
 export default useSignIn;

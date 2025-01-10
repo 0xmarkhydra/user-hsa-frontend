@@ -8,6 +8,7 @@ import useBookCard from "./BookCard/useBookCard";
 import useSideBarLeft from "../Layout/SideBarLeft/useSideBarLeft";
 import SideBarLeftView from "../Layout/SideBarLeft/SideBarLeftView";
 import { motion } from "framer-motion";
+import Empty from "../Empty";
 
 const ActiveBookView = () => {
   const { activeBooks } = useActiveBook();
@@ -48,12 +49,19 @@ const ActiveBookView = () => {
           <BookCategoryView />
         </div>
         <main className="flex-1 px-4 py-12 relative">
-          <BookCardView
-            currentData={currentData}
-            currentPage={currentPage}
-            totalPages={totalPages}
-            goToPage={goToPage}
-          />
+          {currentData.length > 0 ? (
+            <BookCardView
+              currentData={currentData}
+              currentPage={currentPage}
+              totalPages={totalPages}
+              goToPage={goToPage}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center flex-col min-h-[200px]">
+              <span>Không có sách nào được kích hoạt</span>
+              <Empty />
+            </div>
+          )}
         </main>
       </div>
 
