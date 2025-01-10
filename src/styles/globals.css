@@ -1,23 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer utilities {
-  .scrollbar-hidden::-webkit-scrollbar {
-    visibility: hidden;
-    width: 8px;
-  }
-  .scrollbar-visible:hover::-webkit-scrollbar {
-    visibility: visible;
-    width: 8px;
-  }
-  .scrollbar-visible:hover::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-  }
-  .scrollbar-visible:hover::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-  }
-}
 
 :root {
   --background: #ffffff;
@@ -45,7 +28,7 @@ body {
 
 /* Track của thanh cuộn (nền) */
 ::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Màu nền track */
+  background: transparent; /* Màu nền track */
   border-radius: 4px; /* Bo góc */
 }
 
@@ -58,4 +41,13 @@ body {
 /* Thumb khi hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Màu khi hover */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: transparent;
+  transition: 0.2s;
+}
+
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  background: #888;
 }
