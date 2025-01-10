@@ -1,15 +1,40 @@
+import { useState, useEffect } from "react";
 
-import { useState } from "react";
-
-const usePagination = (data, itemsPerPage) => {
+const usePagination = (data, getItemsPerPage) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(1);
+  const [currentData, setCurrentData] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerPage(getItemsPerPage());
+    };
 
-  const currentData = data.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+    if (typeof window !== "undefined") {
+      setItemsPerPage(getItemsPerPage());
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  }, [getItemsPerPage]);
+
+  useEffect(() => {
+    if (!data || data.length === 0) return;
+
+    setTotalPages(Math.ceil(data.length / itemsPerPage));
+    if (currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+
+    setCurrentData(
+      data.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+    );
+  }, [data, currentPage, totalPages, itemsPerPage]);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -36,6 +61,7 @@ const usePagination = (data, itemsPerPage) => {
     nextPage,
     prevPage,
     goToPage,
+    itemsPerPage,
   };
 };
 

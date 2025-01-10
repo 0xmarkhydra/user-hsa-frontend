@@ -1,4 +1,5 @@
 import Services from "@/services";
+import { usePagination } from "@/hooks/usePagination";
 import { useEffect, useState } from "react";
 
 export const CARD_TYPE = {
@@ -134,6 +135,14 @@ export const CardListTitle = {
 const useCard = (type) => {
   const [cardList, setCardList] = useState([]);
 
+  function getItemsPerPage() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 4;
+    if (width >= 768) return 3;
+    if (width >= 640) return 2;
+    return 1;
+  }
+
   useEffect(() => {
     const getData = async () => {
       switch (type) {
@@ -168,7 +177,7 @@ const useCard = (type) => {
     };
     getData();
   }, [type]);
-  return { cardList, title: CardListTitle[type] };
+  return { cardList, title: CardListTitle[type], getItemsPerPage };
 };
 
 export default useCard;

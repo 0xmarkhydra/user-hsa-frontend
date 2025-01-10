@@ -24,8 +24,6 @@ export default function HomeView() {
   const router = useRouter();
   const { userInfo } = useUserInfo();
 
-  console.log(JSON.stringify(userInfo, null, 4));
-
   const { open, onOpenModal, onCloseModal, onSubmit, isSubmitting } =
     useModalActiveBook();
 
@@ -36,34 +34,34 @@ export default function HomeView() {
       <HeaderView toggleShowSidebar={toggleShowSidebar} />
 
       {showSidebar && (
-          <div className="fixed z-20 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
-            <motion.div
-              className="bg-white flex h-full w-fit relative"
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.1, ease: "easeOut" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="absolute right-2 top-5">
-                <button
-                  className="p-1 border border-gray-200 w-7 h-7 flex items-center justify-center rounded-sm"
-                  onClick={toggleShowSidebar}
-                >
-                  <i class="fa-solid fa-bars"></i>
-                </button>
-              </div>
-              <SideBarLeftView />
-            </motion.div>
-          </div>
-        )}
+        <div className="fixed z-20 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] overflow-hidden">
+          <motion.div
+            className="bg-white flex h-full w-fit relative"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="absolute right-2 top-5">
+              <button
+                className="p-1 border border-gray-200 w-7 h-7 flex items-center justify-center rounded-sm"
+                onClick={toggleShowSidebar}
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+            <SideBarLeftView />
+          </motion.div>
+        </div>
+      )}
 
       <div className="flex min-h-screen w-full">
         <aside className="hidden md:block shadow-sm">
           <SideBarLeftView />
         </aside>
 
-        <main className="w-full xs:flex-1 p-4 bg-gray-100 overflow-y-scroll max-h-screen mb-6 relative">
+        <main className="w-full xs:flex-1 p-4 bg-gray-100 overflow-y-scroll max-h-screen mb-6 relative scrollbar-none hover:scrollbar-thin hover:scrollbar-thumb-gray-400 hover:scrollbar-track-gray-200">
           <button
             onClick={onOpenModal}
             class="w-full bg-[#4CAF50] text-white py-3 rounded-lg my-3 flex items-center justify-center lg:hidden"
