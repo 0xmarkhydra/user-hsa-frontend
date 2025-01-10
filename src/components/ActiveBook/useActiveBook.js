@@ -7,7 +7,7 @@ const useActiveBook = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!localStorage.getItem("accessToken")) {
+    if (!localStorage.getItem("access_token")) {
       router.push("/dang-nhap");
       return;
     }
