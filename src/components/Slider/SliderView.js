@@ -5,11 +5,11 @@ const SliderView = () => {
   const { currentIndex, goToIndex, images, resetInterval } = useSlider();
 
   return (
-    <div className="rounded-md shadow-sm overflow-hidden relative mb-5">
+    <div className="rounded-md shadow-sm overflow-hidden relative mb-5 w-full aspect-video bg-white">
       <img
         src={images[currentIndex]}
         alt="Slider"
-        style={{ width: "100%", height: "auto" }}
+        className="w-full object-cover object-center"
       />
       <div className="flex gap-2 justify-evenly absolute bottom-2 left-1/2 -translate-x-1/2">
         {images.map((image, index) => {

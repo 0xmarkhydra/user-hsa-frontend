@@ -57,7 +57,7 @@ export default function HomeView() {
         </div>
       )}
 
-      <div className="flex min-h-screen w-full">
+      <div className="flex h-[calc(100vh-42px)] w-full">
         <aside className="hidden md:block shadow-sm">
           <SideBarLeftView />
         </aside>

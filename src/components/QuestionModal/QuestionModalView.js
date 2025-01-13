@@ -5,9 +5,9 @@ import VideoPlayerView from "../Section/VideoPlayer/VideoPlayerView";
 
 const QuestionModalView = ({ question, toggleViewDetail }) => {
   return ReactDOM.createPortal(
-    <div className="h-full overflow-hidden w-full bg-[rgba(0,0,0,0.5)] absolute right-0 z-10 top-0 flex justify-end">
+    <div className="h-full overflow-hidden w-full bg-[rgba(0,0,0,0.5)] absolute right-0 z-10 top-0 flex justify-center">
       <motion.div
-        className="bg-gray-100 h-full w-full relative overflow-y-scroll"
+        className="bg-gray-100 h-[90%] w-[90%] relative overflow-y-scroll scroll-container pb-12 mt-5 rounded-md"
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}

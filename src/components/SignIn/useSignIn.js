@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Services from "@/services";
 import { useRouter } from "next/navigation";
 
@@ -6,6 +6,12 @@ const useSignIn = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      router.push("/");
+    }
+  }, [router]);
 
   const toggleShowPassword = () => {
     setShowPassword((prev) => !prev);

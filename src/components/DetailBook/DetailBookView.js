@@ -41,7 +41,7 @@ const DetailBookView = () => {
         </div>
       )}
 
-      <div className="flex min-h-screen w-full relative">
+      <div className="flex h-[calc(100vh-42px)] w-full relative">
         <aside className="hidden md:block shadow-sm">
           <SideBarLeftView />
         </aside>
